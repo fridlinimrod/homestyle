@@ -1,0 +1,17 @@
+{
+  "name": "homestyling",
+  "version": "1.0.0",
+  "description": "website for homestyling",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homestyling",
+    "homestyle",
+    "style",
+    "styling"
+  ],
+  "author": "Nimrod Fridlin",
+  "license": "ISC"
+}
