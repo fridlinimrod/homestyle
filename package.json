@@ -1,0 +1,36 @@
+{
+  "name": "homestyling",
+  "version": "1.0.0",
+  "description": "Noa Fridlin's homestyling website",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-filerev": "^2.3.1",
+    "grunt-usemin": "^3.1.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fridlinimrod/homestyle.git"
+  },
+  "keywords": [
+    "homestyling",
+    "home",
+    "style",
+    "design"
+  ],
+  "author": "Nimrod Fridlin fridliNimrod@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fridlinimrod/homestyle/issues"
+  },
+  "homepage": "https://github.com/fridlinimrod/homestyle#readme"
+}

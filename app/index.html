@@ -1,48 +1,84 @@
 <!doctype html>
-<html lang="en" ng-app="homestylingapp">
+<html lang="he" ng-app="homestylingapp">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>sweet styling</title>
   <!-- build:css css/vendor.min.css -->
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap-rtl/dist/css/bootstrap-rtl.css">
   <link rel="stylesheet" href="css/fonts/open-sans/stylesheet.css">
-  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="../bower_components/animate.css/animate.css">
   <!-- endbuild -->
   <!-- build:css css/site.min.css -->
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/app.css">
   <!-- endbuild -->
+</head>
+<body dir="rtl">
+  <header ng-controller="headerController">
+    <nav class="navbar navbar-default main">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand navbar-left" href="#">
+            <img alt="Brand" src="pics/logo.jpg">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li ng-class="{active: isActive('/home')}"><a href="#/home">בית<span class="sr-only">(current)</span></a></li>
+            <li ng-class="{active: isActive('/mywork')}"><a href="#/mywork">העבודות שלי</a></li>
+            <li ng-class="{active: isActive('/about')}"><a href="#/about">מי אני - מה אני</a></li>
+            <li ng-class="{active: isActive('/beforeAfter')}"><a href="#/beforeAfter">לפני ואחרי</a></li>      
+            <li ng-class="{active: isActive('/contact')}"><a href="#/contact">צרו קשר</a></li>      
+          </ul>
+          <!-- <ul class="nav navbar-nav navbar-left">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul> -->
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
+  </div>
 
   <!-- build:js js/vendor.min.js -->
   <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-animate/angular-animate.js"></script>
   <script src="../bower_components/angular-route/angular-route.js"></script>
   <script src="../bower_components/angular-resource/angular-resource.js"></script>
-  <script src="js/animations.js"></script>
   <!-- endbuild -->
+  <!-- <script src="../bower_components/animations.js"></script> -->
+  
   <!-- build:js js/site.min.js -->
   <script src="js/app.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/services.js"></script>
+  <script src="js/controllers/home.controller.js"></script>
+  <script src="js/controllers/header.controller.js"></script>
+  <script src="js/controllers/mywork.controller.js"></script>
+  <script src="js/controllers/about.controller.js"></script>
+  <script src="js/filters/filters.js"></script>
+  <script src="js/services/services.js"></script>
   <!-- endbuild -->
-</head>
-<body>
-  <header>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" src="">
-          </a>
-        </div>
-      </div>
-    </nav>
-    <div><a href="#/underConstructions">בית</a><a href="#/mywork">עבודות</a>
-  </header>
-  <div class="view-container">
-    <div ng-view class="view-frame"></div>
-  </div>
-
 </body>
 </html>

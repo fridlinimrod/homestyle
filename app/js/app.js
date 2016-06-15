@@ -16,21 +16,29 @@ homeStylingApp.config(['$routeProvider',
     $routeProvider.
       when('/mywork', {
         templateUrl: 'partials/mywork.html',
-        controller: 'MyWorkCtrl'
+        controller: 'myWorkCtrl'
       }).
       when('/home', {
         templateUrl: 'partials/home.html',
-        controller: 'HomeCtrl'
+        controller: 'homeCtrl'
       }).
       // when('/phones/:phoneId', {
       //   templateUrl: 'partials/phone-detail.html',
       //   controller: 'PhoneDetailCtrl'
       // }).
-      when('/underConstructions', {
-        templateUrl: 'partials/underConstructions.html',
-        controller: 'underConstructionsCtrl'
+      when('/about', {
+        templateUrl: 'partials/about.html',
+        controller: 'aboutCtrl'
       }).
+      when('/contact', {
+        templateUrl: 'partials/contact.html',
+        // controller: 'aboutCtrl'
+      }).
+      when('/beforeAfter', {
+        templateUrl: 'partials/beforeAfter.html',
+        // controller: 'aboutCtrl'
+      }).      
       otherwise({
-        redirectTo: '/partials/underConstructions'
+        redirectTo: '/home'
       });
   }]);

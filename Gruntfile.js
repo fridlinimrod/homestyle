@@ -24,11 +24,11 @@ grunt.initConfig({
 		    src: [
 		      'Gruntfile.js',
 		      'app/js/{,*/}*.js',
-		      '!js/noanalytics.js'
+		      '!app/js/noanalytics.js'
 		    ]
 		  }
-		},
-
+		},			 
+		
 		copy: {
 		      dist: {
 		        cwd: 'app',
@@ -161,7 +161,7 @@ grunt.initConfig({
 		            }
 		          }
 		        }
-		      }
+		      },
 		      dev: {
 		      	options: {
 		          open: true,
@@ -192,5 +192,8 @@ grunt.registerTask('build', [
 grunt.registerTask('serve',['build','connect:dist','watch']);
 grunt.registerTask('servedev',['connect:dev','watch']);
 grunt.registerTask('default',['build']);
+grunt.registerTask('compile',['jshint']);
+
+// grunt.loadNpmTasks('grunt-contrib-watch');
 
 };

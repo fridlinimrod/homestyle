@@ -1,0 +1,6 @@
+/bower_components
+/node_modules
+/zip_of_things
+/.tmp
+/dist
+
