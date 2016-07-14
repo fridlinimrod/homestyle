@@ -27,8 +27,8 @@ grunt.initConfig({
 		      '!app/js/noanalytics.js'
 		    ]
 		  }
-		},			 
-		
+		},	
+				 
 		copy: {
 		      dist: {
 		        cwd: 'app',
@@ -73,7 +73,7 @@ grunt.initConfig({
 		    // Concat
 		    concat: {
 		        options: {
-		            separator: ';'
+		            separator: ''
 		        },
 		        // dist configuration is provided by useminPrepare
 		        dist: {}
@@ -125,11 +125,11 @@ grunt.initConfig({
 		            tasks: [ 'build' ]
 		        },
 		        js: {
-		            files: ['app/js/app.js'],
+		            files: ['app/js/*.js'],
 		            tasks:[ 'build']
 		        },
 		        css: {
-		            files: ['app/css/mystyles.css'],
+		            files: ['app/css/*.css'],
 		            tasks:['build']
 		        },
 		        livereload: {
@@ -138,7 +138,8 @@ grunt.initConfig({
 		            },
 		            files: [
 		                'app/{,*/}*.html',
-		                '.tmp/css/{,*/}*.css',
+		                // 'app/css/*.css',
+		                '.tmp/concat/{,*/}*.*',
 		                'app/pics/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 		            ]
 		      }
@@ -155,10 +156,10 @@ grunt.initConfig({
 		          open: true,
 		          base:{
 		               path: 'dist',
-		            options: {
-		                index: 'index.html',
-		                maxAge: 300000
-		            }
+		            	options: {
+			                index: 'index.html',
+			                maxAge: 300000
+			            }
 		          }
 		        }
 		      },
@@ -193,7 +194,6 @@ grunt.registerTask('serve',['build','connect:dist','watch']);
 grunt.registerTask('servedev',['connect:dev','watch']);
 grunt.registerTask('default',['build']);
 grunt.registerTask('compile',['jshint']);
-
-// grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.registerTask('imagemin', ['imagemin']);
 
 };

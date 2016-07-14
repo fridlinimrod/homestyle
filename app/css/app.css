@@ -1,5 +1,15 @@
 
-
+:root:before {
+	  content: url("/pics/home/kitchen.jpg")
+			   url("/pics/home/gameroom.jpg")
+	           url("/pics/home/salon.jpg")
+	           url("/pics/home/sleepingroom.jpg")
+	  background-image: url("/pics/home/kitchen.jpg");
+	  visibility: hidden;
+	  position: absolute;
+	  left: -999em;
+	  display: none;
+}
 /*@font-face {
     font-family: 'Levavot';
     src: url('fonts/levavot.ttf');
@@ -9,9 +19,45 @@
     font-family: 'Miri';
     src: url('fonts/Miriwin.ttf');
 }*/
- * {
-		box-sizing: border-box;
+
+.title {
+	text-decoration: line-through;
 }
+.pageTitel {
+	text-align: center;
+	text-decoration: underline;
+}
+.navbar-default {
+	background-color: white;
+}
+
+.navbar-default .navbar-brand {
+	padding: 0;
+	margin:  0 10px;
+}
+
+.navbar-brand img{
+	height: 100%;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
+    color: #FF69B4;
+    font-family: 'OpenSans';
+    padding: 30px;
+    font-size: 9vw;
+    text-align: center;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #FF69B4;
+}
+
+
+ * {
+	box-sizing: border-box;
+}
+
 body {
 	background-image: url("../pics/main_background_5.gif");
     /*padding-top: 12px;*/
@@ -19,15 +65,64 @@ body {
     font-family: 'OpenSans';
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
-	color: #FF69B4;
-    font-family: 'OpenSans';
-    padding:30px;    
+@media only screen and (min-width: 760px) {
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
+	    font-size: 2vw;
+	}
 }
 
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: white;
-    background-color: #FF69B4;
+@media only screen and (min-width: 1100px) {
+
+	:root:before {
+	  content: url("/pics/beforeAfter/benoa_bedroom.jpg")
+	           url("/pics/beforeAfter/benoa_dining.jpg")
+	           url("/pics/beforeAfter/benoa_kitchen.jpg")
+	           
+	           url("/pics/beforeAfter/moran_vegal_bedroom.jpg")
+	           url("/pics/beforeAfter/moran_vegal_knisa.jpg")
+	           url("/pics/beforeAfter/moran_vegal_saloon.jpg")
+	           url("/pics/beforeAfter/moran_vegal_shower.jpg")
+	           
+	           url("/pics/beforeAfter/nir_vetali_bedroom.jpg")
+	           url("/pics/beforeAfter/nir_vetali_dining.jpg")
+	           url("/pics/beforeAfter/nir_vetali_kids.jpg")
+	           url("/pics/beforeAfter/nir_vetali_kids_playroom.jpg")
+	           url("/pics/beforeAfter/nir_vetali_knisa2.jpg")
+	           url("/pics/beforeAfter/nir_vetali_knisa3.jpg")
+	           url("/pics/beforeAfter/nir_vetali_tv.jpg")
+	           
+	           url("/pics/myWork/moranAndGal/chadar_sheina_moran_vegal.jpg")
+	           url("/pics/myWork/moranAndGal/hacheder_shel_maya.jpg")
+	           url("/pics/myWork/moranAndGal/pinat_avoda_basalon.jpg")
+	           url("/pics/myWork/moranAndGal/salon_moran_vegal.jpg")
+	           url("/pics/myWork/moranAndGal/salon_moran_vegal2.jpg")
+	           url("/pics/myWork/moranAndGal/salon_vepinat_avoda1.jpg")
+	                      
+	           url("/pics/myWork/nirAndTali/chadar_mischakim.jpg")
+	           url("/pics/myWork/nirAndTali/chadar_sheina_nir_vetali.jpg")
+	           url("/pics/myWork/nirAndTali/chadar_sheina_yeladim.jpg")
+	           url("/pics/myWork/nirAndTali/nir_vetali_knisa.jpg")
+	           url("/pics/myWork/nirAndTali/pinat_ochel_nir_vetali.jpg")
+	           url("/pics/myWork/nirAndTali/salon_nir_vetali1.jpg")
+	           url("/pics/myWork/nirAndTali/salon_nir_vetali_2.jpg")
+	           
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_amir1.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_pinat_ochel.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_saloon.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_tamar2.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_tamar_1.jpg")
+	           url("/pics/myWork/benAndNoa/noa_ve_ben_kitchen.jpg")
+	           
+	           url("/pics/myWork/giliMedical/office_styling.jpg");
+
+	           
+	  /* partial fallback */
+	  background-image: url("/pics/beforeAfter/benoa_bedroom.jpg");
+	  visibility: hidden;
+	  position: absolute;
+	  left: -999em;
+	  display: none;
+	}
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -89,10 +184,6 @@ nav.main {
 	width:100%;
 }
 
-.construction-text{
-	
-}
-
 .levavot {
 	font-family: 'Levavot';
 	color: red;
@@ -111,13 +202,16 @@ nav.main {
 h2 {
 	font-size: 21px;
 }
+
+
+
 /* For desktop: */
 @media only screen and (min-width: 768px) {
    
 	body {
 		/*padding-top: 40px;*/
 		padding-top:0;
-		font-size:2vw;
+		/*font-size:2vw;*/
 	}
 
 	h2 {
@@ -163,6 +257,36 @@ h2 {
 		margin-right:-18%;
 		height:100%;
 	}
+
+	.picsWrapper {
+	  display: flex; /* or inline-flex */
+	  flex-direction: row;
+	  align-items: stretch;
+	  justify-content: center;
+	  justify-content: space-between;
+	  width: 100%;
+	  position: relative;
+	}
+
+	.picWrapper {
+		border: 2px solid #FF69B4;
+		margin-bottom: 10px;
+	  	/*flex-grow: 1;  default 0 */
+	  	width:35%;
+	  	max-width: 50%;
+	  	position: relative;
+	  	display: flex;
+	  	align-items: center;
+	  	justify-content: space-around;
+	  	margin-bottom: 10vh;
+	  	text-overflow: ellipsis;
+	  	flex-direction: column;
+	  	
+	}
+
+	.picWrapper img{
+		width:75%;
+	}
 }
 
 @media only screen and (min-width: 1664px) {
@@ -170,52 +294,7 @@ h2 {
 		margin-left:9%;
 	}
 }
-/*@keyframes slidy {
-0% { right: 0%; }
-20% { right: 0%; }
-25% { right: -100%; }
-45% { right: -100%; }
-50% { right: -200%; }
-70% { right: -200%; }
-75% { right: -300%; }
-100% { right: -300%; }
-}
- 
-div#slider { overflow: hidden;}
-div#slider figure img { width: 25%; float: left; }
-div#slider figure { 
-  position: relative;
-  width: 400%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  max-height: 85vh;
-  animation: 20s slidy infinite; 
-}*/
 
 
-
-/*#mycarousel {
-	margin-bottom:10vh;
-}
-.carousel-inner {
-	padding-left:10vw;
-	padding-right: 10vw;
-
-}
-
-.carousel-inner .item {
-	height: 85vh;
-	width: 50vh;
-	margin: auto;
-}
-
-.carousel-inner .item > img {
-	display: block;
-    max-height: 300px;
-    height:100%;
-    width: auto;
-}*/
 
 

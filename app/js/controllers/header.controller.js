@@ -17,7 +17,9 @@
 
 	angular.element(document).ready(function () {
 		$("nav li").on("click","a", function(){
-			$("nav button").trigger("click");
+			if ($("nav button").css('display') !== "none"){
+				$("nav button").trigger("click");
+			}
 		});
 	});
 

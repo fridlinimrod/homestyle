@@ -8,16 +8,28 @@
  * Controller of the noadvashApp
  */
 
- angular.module('homestylingapp')
-  .controller('myWorkCtrl', ['$scope',function ($scope) {
-    $scope.active = "home";
-    $scope.changeActive = function(event){
-    	$scope.active = event;
-    };
-    //todo: watch the route param and on change - change the active variable.
-    $("#bs-example-navbar-collapse-1 > ul > li a").click(function(event){
-    	$scope.changeActive(event);
-    });
 
-    
-  }]);
+ angular.module('homestylingapp')
+  .controller('myWorkCtrl', ['$scope', "housesService", function ($scope, housesService) {
+        housesService.getHouses(function(data){
+            $scope.houses = data;
+            //see how to extend each house with some functions and properties...
+            angular.forEach($scope.houses, function(value){
+                // value.activePic = value.pics[0];
+                angular.extend(value, {activePic: value.pics[0],
+                                       setActivePic: function(index){
+                                            this.activePic=value.pics[index];
+                                        },
+                                        isTextVisible: false,
+                                        shouldShowLargeImg: true,
+                                        isActive: function(index){
+                                            return this.activePic === value.pics[index];
+                                        }                                
+                });
+            });
+        });
+
+        $scope.toggleTextVisibility = function(house){
+            house.isTextVisible = ! house.isTextVisible;
+        };
+    }]);// end of controller.

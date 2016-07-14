@@ -1,0 +1,7 @@
+<div ng-repeat="pic in pics" class="thumbnailWrapper" ng-class="{active: isActive($index)}" ng-mouseover="setActivePic($index)" ng-touchstart="setActivePic($index)">
+    <img class="img-responsive flex-item" ng-src="{{pic.thumbUrl}}" />
+    <div>
+        <p>{{pic.headline}}</p>	    
+    </div>
+</div>
+

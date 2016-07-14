@@ -1,2 +1,17 @@
-<h1>גם פה כמובן, צריך לדעת איך את רוצה שייראה :)<br/>
-<span class="goodLuck">ב-ה-צ-ל-ח-ה-!-!</span></h1>
+<section class="beforeAfterMain">
+	<div class="carousel" carousel>
+		
+	</div> 
+	<div class="selectedPicWrapper flexItem">
+		<div class="picTextWrapper flexItem">
+			<h3 class="textedImageTitle">{{activePic.headline}}</h3>
+			<p resized-paragraph pic="activePic" ng-bind-html="activePic.description"></p>
+		</div>
+		<div class="imgWrapper flexItem">
+			<img class="img-responsive" ng-class="fadeIn" ng-src="{{activePic.highResUrl}}" fade-in/>
+		</div>
+		<i class="fa fa-chevron-right prevPic" ng-click="prevPic()"></i>
+		<i class="fa fa-chevron-left nextPic" ng-click="nextPic()"></i>			
+	</div>  
+
+</section>

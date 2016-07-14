@@ -1,3 +1,25 @@
-<h2>פה את צריכה להחליט מה את רוצה שיהיה
-ואיך את רוצה שזה ייראה...
-קדימה, תתחילי לעבוד!!</h2>
+<h2 class="pageTitel animated zoomIn">העבודות שלי</h2>
+ 
+<section id="houses">
+	<div ng-repeat="house in houses">
+		<article class="house">
+			<!-- <h3> {{house.title}} <button ng-click="toggleTextVisibility(house)">עוד פרטים </button></h3>
+			<p toggle-slide data-switch="house.isTextVisible"> {{house.general}}</p> -->
+			<header class="houseHeader textWrapper">
+				<h3> {{house.title}}</h3>
+				<p show-more text="house.general"></p>
+			</header>
+			<section class="houseThumbnails" ng-if="house.pics.length > 1">
+				<div ng-repeat="pic in house.pics" thumbnail-picture pic-info="pic" ng-class="{active: house.isActive($index)}" ng-mouseover="house.setActivePic($index)" ng-touchstart="house.setActivePic($index)">
+				</div>
+			</section>
+			<section class="selectedPicWrapper">
+				<div class="textWrapper">
+					<h3>{{house.activePic.headline}}</h3>
+					<p ng-bind-html="house.activePic.description" > </p>
+				</div>
+				<img ng-src="{{house.activePic.highResUrl}}" alt="{{house.activePic.headline}}" ng-class="fadeIn" fade-in/>
+			</section>
+		</article>
+	</div>
+</section>

@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>sweet styling</title>
+  <title>נועה דבש</title>
   <!-- build:css css/vendor.min.css -->
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="../bower_components/bootstrap-rtl/dist/css/bootstrap-rtl.css">
   <link rel="stylesheet" href="css/fonts/open-sans/stylesheet.css">
   <link rel="stylesheet" href="../bower_components/animate.css/animate.css">
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
   <!-- endbuild -->
+  
   <!-- build:css css/site.min.css -->
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/beforeAfter.css">
+  <link rel="stylesheet" href="css/myWork.css">
+  <link rel="stylesheet" href="css/home.css">
   <!-- endbuild -->
 </head>
 <body dir="rtl">
@@ -63,11 +68,13 @@
 
   <!-- build:js js/vendor.min.js -->
   <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/jquery_lazyload/jquery.lazyload.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-animate/angular-animate.js"></script>
   <script src="../bower_components/angular-route/angular-route.js"></script>
   <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
   <!-- endbuild -->
   <!-- <script src="../bower_components/animations.js"></script> -->
   
@@ -77,8 +84,12 @@
   <script src="js/controllers/header.controller.js"></script>
   <script src="js/controllers/mywork.controller.js"></script>
   <script src="js/controllers/about.controller.js"></script>
-  <script src="js/filters/filters.js"></script>
-  <script src="js/services/services.js"></script>
+  <script src="js/controllers/beforeAfter.controller.js"></script>
+  <script src="js/controllers/contact.controller.js"></script>
+  <script src="js/filters/convertStringLineBreaksToBR.filter.js"></script>
+  <script src="js/filters/convertDotsAndCommasToBR.filter.js"></script>
+  <script src="js/services/houses.service.js"></script>
+  <script src="js/directives/directives.js"></script>
   <!-- endbuild -->
 </body>
 </html>

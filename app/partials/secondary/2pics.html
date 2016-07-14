@@ -1,0 +1,16 @@
+<div class="section beforeAfterMain">
+	<div ng-repeat="pic in pics" ng-if="$index % 2 == 0" class="row picsWrapper">
+		<div class="picWrapper flex">
+		    <p class="flex-item">
+		    	{{pic.description}}
+		    </p>
+		    <img class="img-responsive flex-item" ng-src="{{pic.url}}"/>
+	    </div>
+	    <div class="picWrapper flex">
+		    <p class="flex-item">
+		    	{{pics[$index+1].description}}
+		    </p>
+		    <img class="img-responsive flex-item" ng-if="pics.length > ($index + 1)" ng-src="{{pics[$index+1].url}}"/>
+	    </div>    
+	</div>
+</div>

@@ -10,5 +10,19 @@
 
  angular.module('homestylingapp')
   .controller('homeCtrl', ['$scope', function ($scope) {
-    $scope.numer = 4;
+    $scope.title = "דף הבית";
+    $scope.pics = [
+    	{
+    		url: "pics/home/gameroom.jpg"
+    	},
+    	{
+    		url: "pics/home/kitchen.jpg"
+    	},
+    	{
+    		url: "pics/home/salon.jpg"
+    	},
+    	{
+    		url: "pics/home/sleepingroom.jpg"
+    	}
+	];
   }]);
