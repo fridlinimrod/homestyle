@@ -9,17 +9,15 @@
 				<h3> {{activeHouse.title}}</h3>
 				<p show-more text="activeHouse.general"></p>
 			</header>
-			<section class="houseThumbnails" ng-if="activeHouse.pics.length > 1">
-				<div pics-carousel  pics="activeHouse.pics">
-				</div>
-			</section>
-			<section class="selectedPicWrapper">
-				<div class="textWrapper">
-					<h3>{{activeHouse.activePic.headline}}</h3>
-					<p ng-bind-html="activeHouse.activePic.description" > </p>
-				</div>
-				<img ng-src="{{activeHouse.activePic.highResUrl}}" alt="{{activeHouse.activePic.headline}}" ng-class="fadeIn" fade-in/>
-			</section>
+			<slick ng-repeat="pic in activeHouse.pics">
+				<!-- <section class="selectedPicWrapper"> -->
+					<div class="textWrapper">
+						<h3>{{pic.headline}}</h3>
+						<p ng-bind-html="pic.description" > </p>
+					</div>
+					<img ng-src="{{pic.thumbUrl}}" alt="{{activeHouse.activePic.headline}}"/>
+				<!-- </section> -->
+			</slick>
 		</article>
 	</div>
 </section>

@@ -60,6 +60,7 @@
 .selectedPicWrapper img {
 	width: 70%;
     max-height: 80vh;
+    filter:brightness(150%);
 }
 
 .selectedPicWrapper img.fadeIn {
@@ -75,6 +76,31 @@
 	overflow: hidden;
 }
 
+.housesLinksContainer a {
+  margin-left: 20px;
+  color: #FF69B4;
+  text-decoration: none;
+  font-size: 2em;
+  border-right: 2px solid;
+}
+
+.housesLinksContainer a.active {
+  background-color: #FF69B4;
+  color:white;
+}
+
+.housesLinksContainer a:first-child {
+  border-right: none;
+}
+
+.house {
+  position: relative;
+  left:0;
+  transition: all 1s;
+}
+.house.exit {
+  left:120%;
+}
 @-webkit-keyframes showMore {
 /*    from {
       max-height: 20px;
@@ -144,4 +170,7 @@
       max-height: 20px;
     }
 
+  }
+  .slick-test {
+    width: 200px
   }

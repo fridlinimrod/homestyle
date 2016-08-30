@@ -13,7 +13,8 @@
   "globals": {
     "angular": false,
     "$": false,
-    "homeStylingApp": false
+    "homeStylingApp": false,
+    "alert": false
   },
   "multistr": true
 }

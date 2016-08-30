@@ -1,0 +1,8 @@
+<div class="picsCarouselContainer">
+	<div class="nextImageButton" ng-click="scrollRight()"></div>
+	<div class="thumbnailsWrapper">
+	    <img ng-repeat="pic in pics" class="picInCarousel" ng-class="{active: isActive($index)}" ng-mouseover="setActivePic($index)" ng-touchstart="setActivePic($index)" class="img-responsive" ng-src="{{pic.thumbUrl}}" />
+	</div>
+	<div class="previousImageButton" ng-click="scrollLeft()"></div>
+</div>
+

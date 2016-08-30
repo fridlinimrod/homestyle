@@ -1,10 +1,46 @@
 'use strict';
 
-homeStylingApp.directive("2picsOneNextToAnother", function() {
-    return {
-        templateUrl : 'partials/secondary/2pics.html'
+homeStylingApp.directive("picsCarousel", [function() {
+   return {
+        restrict: "A",
+        scope: {
+            options: "=",
+            pics: "="
+        },
+        templateUrl : 'partials/secondary/picsCarousel.html',
+        link:   function ($scope, element) {    
+                    var defaultSettings = {
+                        picsToShow: 5
+                    };               
+                    
+                    $scope.settings = angular.extend(defaultSettings, $scope.options); 
+
+                    $scope.switchPic = function() {                        
+                        $timeout($scope.switchPic,parseInt($scope.timeForPic));
+                        var activePic = element.find("img")[index];
+                        var nextPic = $scope.getNextPic(); 
+                        angular.element(activePic).fadeOut(parseInt($scope.fadeTime), function(){
+                            $(nextPic).fadeIn(parseInt($scope.fadeTime));                           
+                        });
+                    };                    
+                },
+        controller: ['$scope', function ($scope) {
+            $scope.init = function(){    
+                for (var i = 0; i < $scope.settings.picsToShow -1 && i < pics.length -1; i++) {
+                    $scope.shownPics.push($scope.pics[i]);
+                }
+            }
+            $scope.scrollRight = function(){    
+                return;
+            };
+
+            $scope.scrollLeft = function(){    
+                return;
+            };
+        }]
+
     };
-})
+}])
 .directive("picSwitcher", ["$timeout", function($timeout){
     return {
         restrict: "A",
@@ -44,26 +80,21 @@ homeStylingApp.directive("2picsOneNextToAnother", function() {
     return {
         restrict: 'A',
         scope: {
-            text: "=",
-            textToShow: "@"
+            text: "="
         },
         replace: true,
         template: '<div class=""> \
                      <p>{{textToShow}}<a href="" ng-click="toggleText($event)">המשך חפירה...</a></p>\
                    </div> ',
         link: function($scope){
-            // var removeText = function(){
-            //                 if ($scope.textToShow.length > $scope.cuttedText.length){
-            //                     $scope.textToShow = $scope.textToShow.substring(0, $scope.textToShow.length -8);
-            //                     $444445(removeText,10);
-            //                 }
-            //                 else {
-            //                     $scope.textToShow = $scope.cuttedText;
-            //                 }
+            
+            $scope.$watch("text" , function(n){
+                if (n !== undefined){
+                    $scope.cuttedText = $scope.text.substring(0,50) + "...";
+                    $scope.textToShow = $scope.cuttedText;
+                }
+            });
 
-            //             }
-            $scope.cuttedText = $scope.text.substring(0,50) + "...";
-            $scope.textToShow = $scope.cuttedText;
             $scope.toggleText = function(event){
                 if (event.target.innerHTML === "המשך חפירה..."){
                     event.target.innerHTML = "פחות חפירה";
@@ -85,7 +116,6 @@ homeStylingApp.directive("2picsOneNextToAnother", function() {
                     // $timeout(removeText,3);
                     
                 }  
-
             };
         }
     };
@@ -132,7 +162,7 @@ homeStylingApp.directive("2picsOneNextToAnother", function() {
             	$element.addClass("fadeIn");                
                 $timeout(function() {
                     $element.removeClass("fadeIn");
-                }, 1500);
+                }, 500);
             });
         }
     };

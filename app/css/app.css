@@ -21,7 +21,7 @@
 }*/
 
 .title {
-	text-decoration: line-through;
+	text-decoration: underline;
 }
 .pageTitel {
 	text-align: center;
@@ -37,7 +37,7 @@
 }
 
 .navbar-brand img{
-	height: 100%;
+	height: 58%;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
@@ -65,12 +65,28 @@ body {
     font-family: 'OpenSans';
 }
 
+#whoAmIPic {
+	float:left;
+	width: 10vw;
+}
+
 @media only screen and (min-width: 760px) {
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
 	    font-size: 2vw;
 	}
 }
+#processListTitle {
+	text-decoration: underline;
+}
 
+#processList {
+	list-style: decimal;
+}
+
+
+.mainText {
+	font-size: 2.4vw;
+}
 @media only screen and (min-width: 1100px) {
 
 	:root:before {
@@ -97,6 +113,7 @@ body {
 	           url("/pics/myWork/moranAndGal/salon_moran_vegal.jpg")
 	           url("/pics/myWork/moranAndGal/salon_moran_vegal2.jpg")
 	           url("/pics/myWork/moranAndGal/salon_vepinat_avoda1.jpg")
+	           url("/pics/myWork/moranAndGal/pinat_avoda.jpg")
 	                      
 	           url("/pics/myWork/nirAndTali/chadar_mischakim.jpg")
 	           url("/pics/myWork/nirAndTali/chadar_sheina_nir_vetali.jpg")
@@ -107,13 +124,21 @@ body {
 	           url("/pics/myWork/nirAndTali/salon_nir_vetali_2.jpg")
 	           
 	           url("/pics/myWork/benAndNoa/ben_ve_noa_amir1.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_amir_2.jpg")
 	           url("/pics/myWork/benAndNoa/ben_ve_noa_pinat_ochel.jpg")
 	           url("/pics/myWork/benAndNoa/ben_ve_noa_saloon.jpg")
-	           url("/pics/myWork/benAndNoa/ben_ve_noa_tamar2.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_salon.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_tamar_2.jpg")
 	           url("/pics/myWork/benAndNoa/ben_ve_noa_tamar_1.jpg")
-	           url("/pics/myWork/benAndNoa/noa_ve_ben_kitchen.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_kitchen.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_alon.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_bedroom.jpg")
 	           
-	           url("/pics/myWork/giliMedical/office_styling.jpg");
+	           url("/pics/myWork/giliMedical/office_styling.jpg")
+	           url("/pics/myWork/hagarAndYoav/bathroom.jpg")
+
+	           url("/pics/about/noa.jpg");
+
 
 	           
 	  /* partial fallback */
@@ -133,8 +158,11 @@ body {
 }
 
 .navbar-brand img {
-	height:100%;
-	width: auto;
+    height: 90%;
+    width: auto;
+    position: relative;
+    top: 5px;
+    margin-left:44px;
 }
 
 .bold {
@@ -222,6 +250,11 @@ h2 {
         display: none; !important
     }
 
+    #whoAmIPic {
+    	float:left;
+    	width: 10vw;
+    }
+
 	.picsContainer {
 		/*height: 80vh;*/
 		margin-top:10vh;	
@@ -235,9 +268,9 @@ h2 {
 		border-left:none;
 	}
 
-	.container > .navbar-header {
+	/*.container > .navbar-header {
 		margin-left:10%;
-	}
+	}*/
 	.picsContainer img {
     	max-width: 40vw;
 	}
@@ -289,11 +322,11 @@ h2 {
 	}
 }
 
-@media only screen and (min-width: 1664px) {
+/*@media only screen and (min-width: 1664px) {
 	.container > .navbar-header {
 		margin-left:9%;
 	}
-}
+}*/
 
 
 

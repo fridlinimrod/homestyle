@@ -10,7 +10,7 @@
 
 
  angular.module('homestylingapp')
-  .controller('myWorkCtrl', ['$scope', "housesService", function ($scope, housesService) {
+  .controller('myWorkCtrl', ['$scope', "housesService", "$timeout", function ($scope, housesService, $timeout) {
         housesService.getHouses(function(data){
             $scope.houses = data;
             //see how to extend each house with some functions and properties...
@@ -27,9 +27,23 @@
                                         }                                
                 });
             });
+
+            $scope.activeHouse = $scope.houses[0];
         });
 
         $scope.toggleTextVisibility = function(house){
             house.isTextVisible = ! house.isTextVisible;
+        };
+
+        $scope.setActiveHouse = function(house){
+            $(".house").addClass("exit");
+            $timeout(function() {
+                $scope.activeHouse = $scope.houses[house];
+                $(".house").removeClass("exit");
+            },2000);
+        };
+
+        $scope.isActiveHouse = function(index){
+            return $scope.activeHouse === $scope.houses[index];
         };
     }]);// end of controller.
