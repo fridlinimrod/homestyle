@@ -10,7 +10,8 @@
 
 /*jshint multistr: true */
  angular.module('homestylingapp')
-    .controller('beforeAfterCtrl', ['$scope', 'housesService', function ($scope, housesService) {		
+    .controller('beforeAfterCtrl', ['$scope', 'housesService', 'commonService', function ($scope, housesService, commonService) {
+        $scope.isMobile = commonService.isMobile();
   		var setScopePics = function(data){
   			$scope.pics = data;
 			$scope.activePicIndex = $scope.pics.length -2;
