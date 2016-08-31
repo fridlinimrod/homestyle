@@ -12,6 +12,20 @@
  angular.module('homestylingapp')
     .controller('beforeAfterCtrl', ['$scope', 'housesService', 'commonService', function ($scope, housesService, commonService) {
         $scope.isMobile = commonService.isMobile();
+
+        if ($scope.isMobile){
+            $scope.options = {  
+                                picsToShow: 3,
+                                shouldShowBigPic: true
+                            };
+        }
+        else {
+            $scope.options = {
+                                picsToShow: 5,
+                                shouldShowBigPic: true
+            }
+        }
+
   		var setScopePics = function(data){
   			$scope.pics = data;
 			$scope.activePicIndex = $scope.pics.length -2;
@@ -45,6 +59,7 @@
 		};
 
 		$scope.title = "לפני ואחרי";
+       
 	}
 
 ]);

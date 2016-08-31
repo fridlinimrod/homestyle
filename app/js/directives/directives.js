@@ -10,35 +10,86 @@ homeStylingApp.directive("picsCarousel", [function() {
         templateUrl : 'partials/secondary/picsCarousel.html',
         link:   function ($scope, element) {    
                     var defaultSettings = {
-                        picsToShow: 5
+                        picsToShow: 5,
+                        shouldShowBigPic: false
                     };               
                     
-                    $scope.settings = angular.extend(defaultSettings, $scope.options); 
+                    $scope.settings = angular.merge({}, defaultSettings, $scope.options); 
 
-                    $scope.switchPic = function() {                        
-                        $timeout($scope.switchPic,parseInt($scope.timeForPic));
-                        var activePic = element.find("img")[index];
-                        var nextPic = $scope.getNextPic(); 
-                        angular.element(activePic).fadeOut(parseInt($scope.fadeTime), function(){
-                            $(nextPic).fadeIn(parseInt($scope.fadeTime));                           
-                        });
-                    };                    
+                    $scope.$watch('pics', function (newVal){
+                        if (newVal)
+                            $scope.init();                
+                    });
                 },
         controller: ['$scope', function ($scope) {
-            $scope.init = function(){    
-                for (var i = 0; i < $scope.settings.picsToShow -1 && i < pics.length -1; i++) {
+            $scope.shownPics = [];
+            var smallestIndex = 0, largestIndex = 0;
+            $scope.init = function(){   
+                $scope.shownPics = []; 
+                for (var i = 0; i < $scope.settings.picsToShow && i < $scope.pics.length -1; i++) {
                     $scope.shownPics.push($scope.pics[i]);
                 }
+                $scope.activePic = $scope.shownPics[0];
+                largestIndex = i -1;
             }
-            $scope.scrollRight = function(){    
+            $scope.scrollRight = function(){   
+                smallestIndex--;
+                largestIndex--;
+                $scope.shownPics.pop();
+                $scope.shownPics.unshift($scope.pics[smallestIndex]);
+
                 return;
             };
 
-            $scope.scrollLeft = function(){    
+            $scope.scrollLeft = function(){  
+                smallestIndex++;
+                largestIndex++;
+                $scope.shownPics.shift();
+                $scope.shownPics.push($scope.pics[largestIndex]);
+
                 return;
             };
+
+            $scope.setActivePic = function(index){
+                $scope.activePic=$scope.shownPics[index];
+            }
+            $scope.isActive = function(index){
+                return $scope.activePic === $scope.shownPics[index];
+            }    
+            $scope.shouldShowRightArrow = function(){
+
+                if ($scope.shownPics.indexOf($scope.pics[0]) === -1){
+                    return true;
+                }
+
+                return false;
+            }           
+
+            $scope.shouldShowLeftArrow = function(){
+                if ($scope.shownPics.indexOf($scope.pics[$scope.pics.length -1]) === -1){
+                    return true;
+                }
+
+                return false;
+            }
         }]
 
+    };
+}])
+.directive("bigPicWithText", [function() {
+    return {
+        restrict: "A",
+        scope: {
+            picObj: "=",
+        },
+        templateUrl : 'partials/secondary/bigPicWithText.html',
+        link:   function ($scope, element) { 
+            $scope.$watch('picObj', function(newVal){
+                if (newVal){
+                    console.log($scope.picObj);
+                }
+            })
+        }
     };
 }])
 .directive("picSwitcher", ["$timeout", function($timeout){

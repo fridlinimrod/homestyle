@@ -10,15 +10,9 @@
 				<p show-more text="activeHouse.general"></p>
 			</header>
 			<section class="houseThumbnails" ng-if="activeHouse.pics.length > 1">
-				<div pics-carousel  pics="activeHouse.pics">
-				</div>
+				<div pics-carousel  pics="activeHouse.pics" options="options" class="housePicContainer"></div>
 			</section>
-			<section class="selectedPicWrapper">
-				<div class="textWrapper">
-					<h3>{{activeHouse.activePic.headline}}</h3>
-					<p ng-bind-html="activeHouse.activePic.description" > </p>
-				</div>
-				<img ng-src="{{activeHouse.activePic.highResUrl}}" alt="{{activeHouse.activePic.headline}}" ng-class="fadeIn" fade-in/>
+			<section big-pic-with-text pic-obj="activeHouse.pics[0]" ng-if="activeHouse.pics.length === 1">
 			</section>
 		</article>
 	</div>

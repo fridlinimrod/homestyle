@@ -10,7 +10,7 @@
 
 
  angular.module('homestylingapp')
-  .controller('myWorkCtrl', ['$scope', "housesService", "$timeout", function ($scope, housesService, $timeout) {
+  .controller('myWorkCtrl', ['$scope', "housesService", "commonService", "$timeout", function ($scope, housesService, commonService, $timeout) {
         housesService.getHouses(function(data){
             $scope.houses = data;
             //see how to extend each house with some functions and properties...
@@ -46,4 +46,19 @@
         $scope.isActiveHouse = function(index){
             return $scope.activeHouse === $scope.houses[index];
         };
+
+        $scope.isMobile = commonService.isMobile();
+        if ($scope.isMobile){
+            $scope.options = {  
+                                picsToShow: 3,
+                                shouldShowBigPic: true
+                            };
+        }
+        else {
+            $scope.options = {
+                                picsToShow: 5,
+                                shouldShowBigPic: true
+            }
+        }
+
     }]);// end of controller.

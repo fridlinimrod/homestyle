@@ -1,0 +1,7 @@
+<section class="selectedPicWrapper">
+	<div class="textWrapper">
+		<h3>{{picObj.headline}}</h3>
+		<p ng-bind-html="picObj.description" > </p>
+	</div>
+	<img ng-src="{{picObj.highResUrl}}" alt="{{picObj.headline}}" ng-class="fadeIn" fade-in/>
+</section>

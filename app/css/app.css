@@ -70,6 +70,36 @@ body {
 	width: 10vw;
 }
 
+.picsCarouselContainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.housePicContainer {
+  width: 100%;
+}
+
+.carouselButton {
+  height: 10%;
+  align-self: center;
+  cursor: pointer;
+}
+.thumbnailsWrapper {
+  display: flex;
+  width:100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.thumbnailsWrapper img.active{
+  border: 2px solid #FF69B4;
+}
+.picInCarousel {
+  width: 100px;
+  height: 50px;
+}
+
 @media only screen and (min-width: 760px) {
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
 	    font-size: 2vw;
@@ -147,6 +177,11 @@ body {
 	  position: absolute;
 	  left: -999em;
 	  display: none;
+	}
+
+	.picInCarousel {
+	  width: 200px;
+	  height: 100px;
 	}
 }
 

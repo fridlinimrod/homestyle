@@ -1,8 +1,12 @@
 <div class="picsCarouselContainer">
-	<div class="nextImageButton" ng-click="scrollRight()"></div>
-	<div class="thumbnailsWrapper">
-	    <img ng-repeat="pic in pics" class="picInCarousel" ng-class="{active: isActive($index)}" ng-mouseover="setActivePic($index)" ng-touchstart="setActivePic($index)" class="img-responsive" ng-src="{{pic.thumbUrl}}" />
+	<div class="carouselButton" ng-click="scrollRight()" ng-if="shouldShowRightArrow()">
+		<i class="fa fa-chevron-right"></i>
 	</div>
-	<div class="previousImageButton" ng-click="scrollLeft()"></div>
+	<div class="thumbnailsWrapper">
+	    <img ng-repeat="pic in shownPics" class="picInCarousel" ng-class="{active: isActive($index)}" ng-mouseover="setActivePic($index)" ng-touchstart="setActivePic($index)" class="img-responsive" ng-src="{{pic.thumbUrl}}" />
+	</div>
+	<div class="carouselButton" ng-click="scrollLeft()" ng-if="shouldShowLeftArrow()">
+		<i class="fa fa-chevron-left"></i>	
+	</div>
 </div>
-
+<div big-pic-with-text pic-obj="activePic" ng-if="settings.shouldShowBigPic"></div>
