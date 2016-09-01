@@ -86,7 +86,7 @@ homeStylingApp.directive("picsCarousel", [function() {
         link:   function ($scope, element) { 
             $scope.$watch('picObj', function(newVal){
                 if (newVal){
-                    console.log($scope.picObj);
+                    // console.log($scope.picObj);
                 }
             })
         }

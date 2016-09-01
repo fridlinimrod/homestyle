@@ -1,15 +1,16 @@
+
 .houseThumbnails, .selectedPicWrapper {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .houseThumbnails img {
-	border: 2px solid white;
+  border: 2px solid white;
 }
 
 .houseThumbnails div.active img {
-	border: 2px solid #FF69B4;
+  border: 2px solid #FF69B4;
 }
 
 .houseThumbnails .thumbnailWrapper {
@@ -22,7 +23,7 @@
 }
 
 .houseThumbnails .thumbnailWrapper:last-child {
-	margin: 0;
+  margin: 0;
 }
 .houseThumbnails .thumbnailWrapper img{
     width:200px;
@@ -31,34 +32,34 @@
 }
 
 .selectedPicWrapper {
-	justify-content: center;
+  justify-content: center;
 }
 
 .selectedPicWrapper p {
-	white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 
 .selectedPicWrapper .textWrapper {
-	background-color: white;
-	border-left: 2px solid;
-	width: 30%;
+  background-color: white;
+  border-left: 2px solid;
+  width: 30%;
     max-height: 80vh;
     overflow: auto;
 }
 .textWrapper {
-	padding: 0 2vw;
+  padding: 0 2vw;
 }
 .textWrapper h3 {
-	text-align: center;
-	color: white;
-	background-color: #FF69B4; 
+  text-align: center;
+  color: white;
+  background-color: #FF69B4; 
 }
 
 .textWrapper p{
-	white-space: pre-wrap;
+  white-space: pre-wrap;
 }
 .selectedPicWrapper img {
-	width: 70%;
+  width: 70%;
     max-height: 80vh;
     filter:brightness(150%);
 }
@@ -70,14 +71,17 @@
 }
 
 .showMore {
-	-webkit-animation: showMore 1.1s;
-	-o-animation: showMore 1.1s;
-	animation: showMore 1.1s;
-	overflow: hidden;
+  -webkit-animation: showMore 1.1s;
+  -o-animation: showMore 1.1s;
+  animation: showMore 1.1s;
+  overflow: hidden;
 }
-
+.housesLinksContainer {
+  display: flex;
+  justify-content: center;
+}
 .housesLinksContainer a {
-  margin-left: 20px;
+  padding: 9px;
   color: #FF69B4;
   text-decoration: none;
   font-size: 2em;
@@ -87,6 +91,7 @@
 .housesLinksContainer a.active {
   background-color: #FF69B4;
   color:white;
+  border-color: #FF69B4;
 }
 
 .housesLinksContainer a:first-child {
