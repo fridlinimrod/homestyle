@@ -16,7 +16,7 @@
 
 /*desktop style*/
 @media only screen and (min-width: 1100px) {
-	
+
 	#homeMain {
 		font-size: 2.4vw;
 	}
@@ -29,7 +29,23 @@
 	}
 
 	.switchingPicsContainer img {
-		width: 100%;
+		position: absolute;
 	}
 
+}
+
+.swap-animation.ng-enter, .swap-animation.ng-leave {
+    transition:1.5s linear all;
+}
+.swap-animation.ng-enter {
+    opacity: 0;
+}
+.swap-animation.ng-enter-active {
+    opacity: 0.5;
+}
+.swap-animation.ng-leave {
+    opacity: 0.5;
+}
+.swap-animation.ng-leave-active {
+    opacity: 0;
 }

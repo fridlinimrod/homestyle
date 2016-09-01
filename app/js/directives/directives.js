@@ -97,34 +97,17 @@ homeStylingApp.directive("picsCarousel", [function() {
         restrict: "A",
         scope: {
             pics: "=",
-            fadeTime: "@",
-            timeForPic:"@"
+            fadeTime: "=",
+            timeForPic:"="
         },
-        template: '<img ng-repeat="pic in pics" src="{{pic.url}}" style="display: none"/>',
-        link:   function ($scope, element){
-                    var index = 0;                    
-                    $scope.switchPic = function() {
-                        $timeout($scope.switchPic,parseInt($scope.timeForPic));
-                        var activePic = element.find("img")[index];
-                        var nextPic = $scope.getNextPic(); 
-                        angular.element(activePic).fadeOut(parseInt($scope.fadeTime), function(){
-                            $(nextPic).fadeIn(parseInt($scope.fadeTime));                           
-                        });
-                    };
-                    $scope.getNextPic = function(){    
-                        index++;            
-                        if (index === $scope.pics.length){
-                            index=0;                   
-                        }
+        template: '<img ng-src="{{pics[index].url}}" ng-animate-swap="index" class="swap-animation"/>',
+        controller: ['$scope', '$interval', function ($scope, $interval) {
+            $scope.index = 0;
+            $interval(function() {
+                $scope.index = $scope.index >= $scope.pics.length ? 0 : $scope.index + 1;
+            }, $scope.timeForPic)
 
-                        return element.find("img")[index];
-                    };
-                
-                    $timeout($scope.switchPic,500);
-                    $timeout(function(){
-                        element.find("img:first-child").css({display: "block"});
-                    });
-                }
+        }]
     };
 }])
 .directive("showMore", [function(){
@@ -209,8 +192,8 @@ homeStylingApp.directive("picsCarousel", [function() {
         restrict: 'A',
         scope: {},
         link: function($scope, $element){
-            $element.on('load', function() {            	
-            	$element.addClass("fadeIn");                
+            $element.on('load', function() {
+            	$element.addClass("fadeIn");
                 $timeout(function() {
                     $element.removeClass("fadeIn");
                 }, 500);
