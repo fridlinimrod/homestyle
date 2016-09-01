@@ -41,7 +41,7 @@
     opacity: 0;
 }
 .swap-animation.ng-enter-active {
-    opacity: 0.5;
+    opacity: 1;
 }
 .swap-animation.ng-leave {
     opacity: 0.5;
