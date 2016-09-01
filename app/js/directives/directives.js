@@ -8,70 +8,49 @@ homeStylingApp.directive("picsCarousel", [function() {
             pics: "="
         },
         templateUrl : 'partials/secondary/picsCarousel.html',
-        link:   function ($scope, element) {    
+        link:   function ($scope, element) {
                     var defaultSettings = {
                         picsToShow: 5,
                         shouldShowBigPic: false
-                    };               
-                    
-                    $scope.settings = angular.merge({}, defaultSettings, $scope.options); 
+                    };
+
+                    $scope.settings = angular.merge({}, defaultSettings, $scope.options);
 
                     $scope.$watch('pics', function (newVal){
                         if (newVal)
-                            $scope.init();                
+                            $scope.init();
                     });
                 },
         controller: ['$scope', function ($scope) {
             $scope.shownPics = [];
-            var smallestIndex = 0, largestIndex = 0;
-            $scope.init = function(){   
+            $scope.smallestIndex = 0;
+            $scope.largestIndex = 0;
+            $scope.init = function(){
                 $scope.shownPics = []; 
                 for (var i = 0; i < $scope.settings.picsToShow && i < $scope.pics.length -1; i++) {
                     $scope.shownPics.push($scope.pics[i]);
                 }
                 $scope.activePic = $scope.shownPics[0];
-                largestIndex = i -1;
-            }
-            $scope.scrollRight = function(){   
-                smallestIndex--;
-                largestIndex--;
+                $scope.largestIndex = i -1;
+            };
+
+            $scope.scrollRight = function(){
+                $scope.smallestIndex--;
+                $scope.largestIndex--;
                 $scope.shownPics.pop();
-                $scope.shownPics.unshift($scope.pics[smallestIndex]);
-
-                return;
+                $scope.shownPics.unshift($scope.pics[$scope.smallestIndex]);
             };
 
-            $scope.scrollLeft = function(){  
-                smallestIndex++;
-                largestIndex++;
+            $scope.scrollLeft = function(){
+                $scope.smallestIndex++;
+                $scope.largestIndex++;
                 $scope.shownPics.shift();
-                $scope.shownPics.push($scope.pics[largestIndex]);
-
-                return;
+                $scope.shownPics.push($scope.pics[$scope.largestIndex]);
             };
 
-            $scope.setActivePic = function(index){
-                $scope.activePic=$scope.shownPics[index];
-            }
-            $scope.isActive = function(index){
-                return $scope.activePic === $scope.shownPics[index];
-            }    
-            $scope.shouldShowRightArrow = function(){
-
-                if ($scope.shownPics.indexOf($scope.pics[0]) === -1){
-                    return true;
-                }
-
-                return false;
-            }           
-
-            $scope.shouldShowLeftArrow = function(){
-                if ($scope.shownPics.indexOf($scope.pics[$scope.pics.length -1]) === -1){
-                    return true;
-                }
-
-                return false;
-            }
+            $scope.setActivePic = function(pic){
+                $scope.activePic = pic;
+            };
         }]
 
     };
