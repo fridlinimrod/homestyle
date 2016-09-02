@@ -8,70 +8,49 @@ homeStylingApp.directive("picsCarousel", [function() {
             pics: "="
         },
         templateUrl : 'partials/secondary/picsCarousel.html',
-        link:   function ($scope, element) {    
+        link:   function ($scope, element) {
                     var defaultSettings = {
                         picsToShow: 5,
                         shouldShowBigPic: false
-                    };               
-                    
-                    $scope.settings = angular.merge({}, defaultSettings, $scope.options); 
+                    };
+
+                    $scope.settings = angular.merge({}, defaultSettings, $scope.options);
 
                     $scope.$watch('pics', function (newVal){
                         if (newVal)
-                            $scope.init();                
+                            $scope.init();
                     });
                 },
         controller: ['$scope', function ($scope) {
             $scope.shownPics = [];
-            var smallestIndex = 0, largestIndex = 0;
-            $scope.init = function(){   
+            $scope.smallestIndex = 0;
+            $scope.largestIndex = 0;
+            $scope.init = function(){
                 $scope.shownPics = []; 
                 for (var i = 0; i < $scope.settings.picsToShow && i < $scope.pics.length -1; i++) {
                     $scope.shownPics.push($scope.pics[i]);
                 }
                 $scope.activePic = $scope.shownPics[0];
-                largestIndex = i -1;
-            }
-            $scope.scrollRight = function(){   
-                smallestIndex--;
-                largestIndex--;
+                $scope.largestIndex = i -1;
+            };
+
+            $scope.scrollRight = function(){
+                $scope.smallestIndex--;
+                $scope.largestIndex--;
                 $scope.shownPics.pop();
-                $scope.shownPics.unshift($scope.pics[smallestIndex]);
-
-                return;
+                $scope.shownPics.unshift($scope.pics[$scope.smallestIndex]);
             };
 
-            $scope.scrollLeft = function(){  
-                smallestIndex++;
-                largestIndex++;
+            $scope.scrollLeft = function(){
+                $scope.smallestIndex++;
+                $scope.largestIndex++;
                 $scope.shownPics.shift();
-                $scope.shownPics.push($scope.pics[largestIndex]);
-
-                return;
+                $scope.shownPics.push($scope.pics[$scope.largestIndex]);
             };
 
-            $scope.setActivePic = function(index){
-                $scope.activePic=$scope.shownPics[index];
-            }
-            $scope.isActive = function(index){
-                return $scope.activePic === $scope.shownPics[index];
-            }    
-            $scope.shouldShowRightArrow = function(){
-
-                if ($scope.shownPics.indexOf($scope.pics[0]) === -1){
-                    return true;
-                }
-
-                return false;
-            }           
-
-            $scope.shouldShowLeftArrow = function(){
-                if ($scope.shownPics.indexOf($scope.pics[$scope.pics.length -1]) === -1){
-                    return true;
-                }
-
-                return false;
-            }
+            $scope.setActivePic = function(pic){
+                $scope.activePic = pic;
+            };
         }]
 
     };
@@ -97,34 +76,17 @@ homeStylingApp.directive("picsCarousel", [function() {
         restrict: "A",
         scope: {
             pics: "=",
-            fadeTime: "@",
-            timeForPic:"@"
+            fadeTime: "=",
+            timeForPic:"="
         },
-        template: '<img ng-repeat="pic in pics" src="{{pic.url}}" style="display: none"/>',
-        link:   function ($scope, element){
-                    var index = 0;                    
-                    $scope.switchPic = function() {
-                        $timeout($scope.switchPic,parseInt($scope.timeForPic));
-                        var activePic = element.find("img")[index];
-                        var nextPic = $scope.getNextPic(); 
-                        angular.element(activePic).fadeOut(parseInt($scope.fadeTime), function(){
-                            $(nextPic).fadeIn(parseInt($scope.fadeTime));                           
-                        });
-                    };
-                    $scope.getNextPic = function(){    
-                        index++;            
-                        if (index === $scope.pics.length){
-                            index=0;                   
-                        }
+        template: '<img ng-src="{{pics[index].url}}" ng-animate-swap="index" class="swap-animation"/>',
+        controller: ['$scope', '$interval', function ($scope, $interval) {
+            $scope.index = 0;
+            $interval(function() {
+                $scope.index = $scope.index >= $scope.pics.length ? 0 : $scope.index + 1;
+            }, $scope.timeForPic)
 
-                        return element.find("img")[index];
-                    };
-                
-                    $timeout($scope.switchPic,500);
-                    $timeout(function(){
-                        element.find("img:first-child").css({display: "block"});
-                    });
-                }
+        }]
     };
 }])
 .directive("showMore", [function(){
@@ -209,8 +171,8 @@ homeStylingApp.directive("picsCarousel", [function() {
         restrict: 'A',
         scope: {},
         link: function($scope, $element){
-            $element.on('load', function() {            	
-            	$element.addClass("fadeIn");                
+            $element.on('load', function() {
+            	$element.addClass("fadeIn");
                 $timeout(function() {
                     $element.removeClass("fadeIn");
                 }, 500);
