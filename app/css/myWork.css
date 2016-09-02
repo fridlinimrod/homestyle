@@ -79,12 +79,14 @@
 .housesLinksContainer {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .housesLinksContainer a {
   padding: 9px;
   color: #FF69B4;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
   border-right: 2px solid;
 }
 
