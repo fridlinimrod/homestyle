@@ -9,7 +9,9 @@
 }
 
 .switchingPicsContainer img {
+    position: absolute;
 	width: 90%;
+    top: 30px;
 
 }
 
@@ -27,11 +29,6 @@
 		align-items: center;
 		flex-direction: row;
 	}
-
-	.switchingPicsContainer img {
-		position: absolute;
-	}
-
 }
 
 .swap-animation.ng-enter, .swap-animation.ng-leave {
