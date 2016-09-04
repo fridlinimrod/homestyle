@@ -23,7 +23,7 @@
             $scope.options = {
                                 picsToShow: 5,
                                 shouldShowBigPic: true
-            }
+            };
         }
 
   		var setScopePics = function(data){

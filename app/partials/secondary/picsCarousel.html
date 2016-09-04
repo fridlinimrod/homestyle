@@ -3,7 +3,7 @@
 		<i class="fa fa-chevron-right"></i>
 	</div>
 	<div class="thumbnailsWrapper">
-	    <img ng-repeat="pic in shownPics" class="picInCarousel" ng-class="{active: activePic === pic}" ng-mouseover="setActivePic(pic)" ng-touchstart="setActivePic(pic)" class="img-responsive" ng-src="{{pic.thumbUrl}}" />
+	    <img ng-repeat="pic in shownPics" ng-animate class="picInCarousel" ng-class="{active: activePic === pic}" ng-mouseover="setActivePic(pic)" ng-touchstart="setActivePic(pic)" class="img-responsive" ng-src="{{pic.thumbUrl}}" />
 	</div>
 	<div class="carouselButton" ng-click="scrollLeft()" ng-if="largestIndex < pics.length - 1">
 		<i class="fa fa-chevron-left"></i>	

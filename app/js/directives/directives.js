@@ -8,7 +8,7 @@ homeStylingApp.directive("picsCarousel", [function() {
             pics: "="
         },
         templateUrl : 'partials/secondary/picsCarousel.html',
-        link:   function ($scope, element) {
+        link:   function ($scope) {
                     var defaultSettings = {
                         picsToShow: 5,
                         shouldShowBigPic: false
@@ -17,11 +17,12 @@ homeStylingApp.directive("picsCarousel", [function() {
                     $scope.settings = angular.merge({}, defaultSettings, $scope.options);
 
                     $scope.$watch('pics', function (newVal){
-                        if (newVal)
+                        if (newVal){
                             $scope.init();
+                        }
                     });
                 },
-        controller: ['$scope', function ($scope) {
+        controller: ['$scope' , '$timeout', function ($scope, $timeout) {
             $scope.shownPics = [];
             $scope.smallestIndex = 0;
             $scope.largestIndex = 0;
@@ -38,14 +39,18 @@ homeStylingApp.directive("picsCarousel", [function() {
                 $scope.smallestIndex--;
                 $scope.largestIndex--;
                 $scope.shownPics.pop();
-                $scope.shownPics.unshift($scope.pics[$scope.smallestIndex]);
+                $timeout(function(){
+                    $scope.shownPics.unshift($scope.pics[$scope.smallestIndex]);
+                }, 400);
             };
 
             $scope.scrollLeft = function(){
                 $scope.smallestIndex++;
                 $scope.largestIndex++;
                 $scope.shownPics.shift();
-                $scope.shownPics.push($scope.pics[$scope.largestIndex]);
+                $timeout(function(){
+                    $scope.shownPics.push($scope.pics[$scope.largestIndex]);
+                }, 400);
             };
 
             $scope.setActivePic = function(pic){
@@ -62,16 +67,16 @@ homeStylingApp.directive("picsCarousel", [function() {
             picObj: "=",
         },
         templateUrl : 'partials/secondary/bigPicWithText.html',
-        link:   function ($scope, element) { 
+        link:   function ($scope) { 
             $scope.$watch('picObj', function(newVal){
                 if (newVal){
                     // console.log($scope.picObj);
                 }
-            })
+            });
         }
     };
 }])
-.directive("picSwitcher", ["$timeout", function($timeout){
+.directive("picSwitcher", [function(){
     return {
         restrict: "A",
         scope: {
@@ -84,7 +89,7 @@ homeStylingApp.directive("picsCarousel", [function() {
             $scope.index = 0;
             $interval(function() {
                 $scope.index = $scope.index >= $scope.pics.length ? 0 : $scope.index + 1;
-            }, $scope.timeForPic)
+            }, $scope.timeForPic);
 
         }]
     };

@@ -61,7 +61,6 @@
 .selectedPicWrapper img {
   width: 70%;
     max-height: 80vh;
-    filter:brightness(150%);
 }
 
 .selectedPicWrapper img.fadeIn {

@@ -58,7 +58,7 @@
             $scope.options = {
                                 picsToShow: 5,
                                 shouldShowBigPic: true
-            }
+            };
         }
 
     }]);// end of controller.
