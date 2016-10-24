@@ -1,0 +1,31 @@
+video {
+	max-height: 90vh;
+	max-width: 100%;
+	display: block;
+	margin: 20px auto;
+}
+
+.textRecsWrapper {
+	/*display: flex;*/
+	    margin-bottom: 20px;
+    /*justify-content: space-between;*/
+}
+
+.textRecWrapper {
+    background-color: white;
+    border-radius: 8px;
+    width: 75%;
+    padding: 15px;
+    position: relative;
+    font-size:120%;
+    margin: 20px auto;
+    box-shadow: 10px 10px 7px;
+    font-weight: bold;
+}
+
+.textRecWrapper footer {
+	position: absolute;
+	left:50px;
+	bottom: 0;
+	font-size:80%;
+}

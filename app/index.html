@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/beforeAfter.css">
   <link rel="stylesheet" href="css/myWork.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/recommendations.css">
   <!-- endbuild -->
 </head>
 <body dir="rtl">
@@ -38,9 +39,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li ng-class="{active: isActive('/home')}"><a href="#/home">בית<span class="sr-only">(current)</span></a></li>
-            <li ng-class="{active: isActive('/mywork')}"><a href="#/mywork">העבודות שלי</a></li>
+            <li ng-class="{active: isActive('/mywork')}"><a href="#/mywork">עבודות שלי</a></li>
             <li ng-class="{active: isActive('/about')}"><a href="#/about">מי אני - מה אני</a></li>
-            <li ng-class="{active: isActive('/beforeAfter')}"><a href="#/beforeAfter">לפני ואחרי</a></li>      
+            <li ng-class="{active: isActive('/beforeAfter')}"><a href="#/beforeAfter">לפני ואחרי</a></li>
+            <li ng-class="{active: isActive('/recommendations')}"><a href="#/recommendations">ממליצים</a></li>
             <li ng-class="{active: isActive('/contact')}"><a href="#/contact">צרו קשר</a></li>      
           </ul>
           <!-- <ul class="nav navbar-nav navbar-left">
@@ -76,6 +78,8 @@
   <script src="../bower_components/angular-route/angular-route.js"></script>
   <script src="../bower_components/angular-resource/angular-resource.js"></script>
   <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../bower_components/angular-fullscreen/src/angular-fullscreen.js"></script>
+  <script src="../node_modules/angular-touch/angular-touch.js"></script>
   <!-- endbuild -->
   <!-- <script src="../bower_components/animations.js"></script> -->
   
@@ -87,9 +91,11 @@
   <script src="js/controllers/about.controller.js"></script>
   <script src="js/controllers/beforeAfter.controller.js"></script>
   <script src="js/controllers/contact.controller.js"></script>
+  <script src="js/controllers/recommendations.controller.js"></script>
   <script src="js/filters/convertStringLineBreaksToBR.filter.js"></script>
   <script src="js/filters/convertDotsAndCommasToBR.filter.js"></script>
   <script src="js/services/houses.service.js"></script>
+  <script src="js/services/recommendations.service.js"></script>
   <script src="js/services/commonService.js"></script>
   <script src="js/directives/directives.js"></script>
   <!-- endbuild -->

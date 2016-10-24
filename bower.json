@@ -33,7 +33,8 @@
     "ngGallery": "*",
     "jquery_lazyload": "jquery.lazyload#^1.9.7",
     "angular-sanitize": "^1.5.7",
-    "angular-route": "^1.5.8"
+    "angular-route": "^1.5.8",
+    "angular-fullscreen": "^1.0.1"
   },
   "resolutions": {
     "angular": "1.5.6"

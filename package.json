@@ -4,6 +4,7 @@
   "description": "Noa Fridlin's homestyling website",
   "main": "Gruntfile.js",
   "dependencies": {
+    "angular-touch": "^1.5.8",
     "connect": "^3.4.1",
     "grunt-connect": "^0.2.0",
     "grunt-contrib-clean": "^1.0.0",
@@ -17,8 +18,11 @@
     "jquery-lazyload": "^1.9.7"
   },
   "devDependencies": {
+    "autoprefixer": "^6.4.1",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-imagemin": "^1.0.1"
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-postcss": "^0.8.0",
+    "pixrem": "^3.0.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
