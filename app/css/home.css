@@ -1,17 +1,22 @@
 /*mobile style*/
 
 .switchingPicsContainer {
+	display: -ms-flexbox;
 	display: flex;
 	width:100%;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-ms-flex-align: center;
+	    align-items: center;
 }
 
 .switchingPicsContainer img {
     position: absolute;
 	width: 90%;
     top: 30px;
+    margin-bottom: 20px;
 
 }
 
@@ -25,9 +30,13 @@
 
 	.switchingPicsContainer {
 		height:80vh;
-		justify-content: space-around;
-		align-items: center;
-		flex-direction: row;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
+		-ms-flex-align: center;
+		    -ms-grid-row-align: center;
+		    align-items: center;
+		-ms-flex-direction: row;
+		    flex-direction: row;
 	}
 }
 
@@ -46,3 +55,4 @@
 .swap-animation.ng-leave-active {
     opacity: 0;
 }
+/*# sourceMappingURL=../../dist/css/maps/home.css.map */

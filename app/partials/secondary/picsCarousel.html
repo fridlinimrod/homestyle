@@ -2,11 +2,11 @@
 	<div class="carouselButton" ng-click="scrollRight()" ng-if="smallestIndex > 0">
 		<i class="fa fa-chevron-right"></i>
 	</div>
-	<div class="thumbnailsWrapper">
+	<div class="thumbnailsWrapper" ng-swipe-left="scrollRight()" ng-swipe-right="scrollLeft()">
 	    <img ng-repeat="pic in shownPics" ng-animate class="picInCarousel" ng-class="{active: activePic === pic}" ng-mouseover="setActivePic(pic)" ng-touchstart="setActivePic(pic)" class="img-responsive" ng-src="{{pic.thumbUrl}}" />
 	</div>
 	<div class="carouselButton" ng-click="scrollLeft()" ng-if="largestIndex < pics.length - 1">
 		<i class="fa fa-chevron-left"></i>	
 	</div>
 </div>
-<div big-pic-with-text pic-obj="activePic" ng-if="settings.shouldShowBigPic"></div>
+<div big-pic-with-text pic-obj="activePic"  ng-if="settings.shouldShowBigPic"></div>

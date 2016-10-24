@@ -36,6 +36,9 @@ homeStylingApp.directive("picsCarousel", [function() {
             };
 
             $scope.scrollRight = function(){
+                if ($scope.smallestIndex === 0){
+                    return;
+                }
                 $scope.smallestIndex--;
                 $scope.largestIndex--;
                 $scope.shownPics.pop();
@@ -45,6 +48,9 @@ homeStylingApp.directive("picsCarousel", [function() {
             };
 
             $scope.scrollLeft = function(){
+                if ($scope.largestIndex === $scope.pics.length -1){
+                    return;
+                }
                 $scope.smallestIndex++;
                 $scope.largestIndex++;
                 $scope.shownPics.shift();
@@ -88,7 +94,7 @@ homeStylingApp.directive("picsCarousel", [function() {
         controller: ['$scope', '$interval', function ($scope, $interval) {
             $scope.index = 0;
             $interval(function() {
-                $scope.index = $scope.index >= $scope.pics.length ? 0 : $scope.index + 1;
+                $scope.index = $scope.index >= $scope.pics.length - 1 ? 0 : $scope.index + 1;
             }, $scope.timeForPic);
 
         }]

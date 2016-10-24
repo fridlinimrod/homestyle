@@ -30,11 +30,21 @@
     top: 0;
 }
 
-.ng-leave.ng-leave-active,
-.ng-enter {
+.picInCarousel.ng-leave.ng-leave-active,
+.picInCarousel.ng-enter {
     opacity: 0;
     top: 150px;
 }
+
+.navbar-brand img {
+    height: 90%;
+    display: inline;
+    width: 22%;
+    position: relative;
+    top: 5px;
+    margin-left:44px;
+}
+
 @media (max-width: 993px) {
     .navbar-header {
         float: none;
@@ -72,134 +82,6 @@
 	}
 }
 :root:before {
-	  content: url("/pics/home/kitchen.jpg")
-			   url("/pics/home/gameroom.jpg")
-	           url("/pics/home/salon.jpg")
-	           url("/pics/home/sleepingroom.jpg")
-	  background-image: url("/pics/home/kitchen.jpg");
-	  visibility: hidden;
-	  position: absolute;
-	  left: -999em;
-	  display: none;
-}
-/*@font-face {
-    font-family: 'Levavot';
-    src: url('fonts/levavot.ttf');
-}
-
-@font-face {
-    font-family: 'Miri';
-    src: url('fonts/Miriwin.ttf');
-}*/
-
-.title {
-	text-decoration: underline;
-}
-.pageTitel {
-	text-align: center;
-	text-decoration: underline;
-}
-.navbar-default {
-	background-color: white;
-}
-
-.navbar-default .navbar-brand {
-	padding: 0;
-	margin:  0 10px;
-}
-
-.navbar-brand img{
-	height: 58%;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
-    color: #FF69B4;
-    font-family: 'OpenSans';
-    padding: 30px;
-    font-size: 9vw;
-    text-align: center;
-}
-
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: white;
-    background-color: #FF69B4;
-}
-
-
- * {
-	box-sizing: border-box;
-}
-
-body {
-	background-image: url("../pics/main_background_5.gif");
-    /*padding-top: 12px;*/
-    color: #FF69B4;
-    font-family: 'OpenSans';
-}
-
-#whoAmIPic {
-	float:left;
-	width: 10vw;
-	border: 1px solid;
-	box-shadow: 5px 5px 5px #888888;
-	border-radius: 20px;
-}
-
-.picsCarouselContainer {
-  display: flex;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.housePicContainer {
-  width: 100%;
-}
-
-.carouselButton {
-  /*height: 10%;*/
-  align-self: center;
-  cursor: pointer;
-}
-.thumbnailsWrapper {
-  display: flex;
-  width:100%;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.thumbnailsWrapper img.active{
-  border: 2px solid #FF69B4;
-}
-.picInCarousel {
-  width: 100px;
-  height: 50px;
-  border: 2px solid white;
-}
-
-@media only screen and (min-width: 760px) {
-	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
-	    font-size: 2vw;
-	}
-}
-#processListTitle {
-	text-decoration: underline;
-}
-
-#processList {
-	list-style: decimal;
-}
-
-
-.mainText {
-	font-size: 2.4vw;
-}
-
-.aboutMainText {
-	font-size: 2vw;
-}
-@media only screen and (min-width: 1100px) {
-
-	:root:before {
 	  content: url("/pics/beforeAfter/benoa_bedroom.jpg")
 	           url("/pics/beforeAfter/benoa_dining.jpg")
 	           url("/pics/beforeAfter/benoa_kitchen.jpg")
@@ -247,6 +129,203 @@ body {
 	           url("/pics/myWork/giliMedical/office_styling.jpg")
 	           url("/pics/myWork/hagarAndYoav/bathroom.jpg")
 
+	           url("/pics/about/noa.jpg")
+			   url("/pics/home/kitchen.jpg")
+			   url("/pics/home/gameroom.jpg")
+	           url("/pics/home/salon.jpg")
+	           url("/pics/home/sleepingroom.jpg");
+
+
+
+	           
+	  /* partial fallback */
+	  background-image: url("/pics/beforeAfter/benoa_bedroom.jpg");
+	  visibility: hidden;
+	  position: absolute;
+	  left: -999em;
+	  display: none;
+	}
+}
+/*@font-face {
+    font-family: 'Levavot';
+    src: url('fonts/levavot.ttf');
+}
+
+@font-face {
+    font-family: 'Miri';
+    src: url('fonts/Miriwin.ttf');
+}*/
+
+.title {
+	text-decoration: underline;
+}
+.pageTitel {
+	text-align: center;
+	text-decoration: underline;
+}
+.navbar-default {
+	background-color: white;
+}
+
+.navbar-default .navbar-brand {
+	padding: 0;
+	margin:  0 10px;
+}
+
+/*.navbar-brand img{
+	height: 58%;
+}*/
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
+    color: #FF69B4;
+    font-family: 'OpenSans';
+    padding: 30px;
+    font-size: 9vw;
+    text-align: center;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #FF69B4;
+}
+
+
+ * {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("../pics/main_background_5.gif");
+    /*padding-top: 12px;*/
+    color: #FF69B4;
+    font-family: 'OpenSans';
+}
+
+#whoAmIPic {
+	float:left;
+	width: 100%;
+	border: 1px solid;
+	box-shadow: 5px 5px 5px #888888;
+	border-radius: 20px;
+
+	margin-bottom: 7px;
+}
+
+.picsCarouselContainer {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.housePicContainer {
+  width: 100%;
+}
+
+.carouselButton {
+  /*height: 10%;*/
+  align-self: center;
+  cursor: pointer;
+}
+.thumbnailsWrapper {
+  display: flex;
+  width:100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.thumbnailsWrapper img.active{
+  border: 2px solid #FF69B4;
+}
+.picInCarousel {
+  width: 100px;
+  height: 50px;
+  border: 2px solid white;
+}
+
+.aboutMainText {
+	font-size: 4vw;
+	font-weight: bold;
+}
+
+@media only screen and (min-width: 760px) {
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a {
+	    font-size: 2vw;
+	}
+
+	.aboutMainText {
+		font-size: 2vw;
+		font-weight: initial;
+	}	
+	#whoAmIPic {
+		width: 10vw;
+	}
+}
+#processListTitle {
+	text-decoration: underline;
+}
+
+#processList {
+	list-style: decimal;
+}
+
+
+
+
+.mainText {
+	font-size: 2.4vw;
+}
+
+
+@media only screen and (min-width: 1100px) {
+
+	:root:before {
+	  content: url("/pics/beforeAfter/benoa_bedroom.jpg")
+	           url("/pics/beforeAfter/benoa_dining.jpg")
+	           url("/pics/beforeAfter/benoa_kitchen.jpg")
+	           
+	           url("/pics/beforeAfter/moran_vegal_bedroom.jpg")
+	           url("/pics/beforeAfter/moran_vegal_knisa.jpg")
+	           url("/pics/beforeAfter/moran_vegal_saloon.jpg")
+	           url("/pics/beforeAfter/moran_vegal_shower.jpg")
+	           
+	           url("/pics/beforeAfter/nir_vetali_bedroom.jpg")
+	           url("/pics/beforeAfter/nir_vetali_dining.jpg")
+	           url("/pics/beforeAfter/nir_vetali_kids.jpg")
+	           url("/pics/beforeAfter/nir_vetali_kids_playroom.jpg")
+	           url("/pics/beforeAfter/nir_vetali_knisa2.jpg")
+	           url("/pics/beforeAfter/nir_vetali_knisa3.jpg")
+	           url("/pics/beforeAfter/nir_vetali_tv.jpg")
+	           
+	           url("/pics/myWork/moranAndGal/chadar_sheina_moran_vegal.jpg")
+	           url("/pics/myWork/moranAndGal/hacheder_shel_maya.jpg")
+	           url("/pics/myWork/moranAndGal/pinat_avoda_basalon.jpg")
+	           url("/pics/myWork/moranAndGal/salon_moran_vegal.jpg")
+	           url("/pics/myWork/moranAndGal/salon_moran_vegal2.jpg")
+	           url("/pics/myWork/moranAndGal/salon_vepinat_avoda1.jpg")
+	           url("/pics/myWork/moranAndGal/pinat_avoda.jpg")
+	                      
+	           url("/pics/myWork/nirAndTali/chadar_mischakim.jpg")
+	           url("/pics/myWork/nirAndTali/chadar_sheina_nir_vetali.jpg")
+	           url("/pics/myWork/nirAndTali/chadar_sheina_yeladim.jpg")
+	           url("/pics/myWork/nirAndTali/nir_vetali_knisa.jpg")
+	           url("/pics/myWork/nirAndTali/pinat_ochel_nir_vetali.jpg")
+	           url("/pics/myWork/nirAndTali/salon_nir_vetali1.jpg")
+	           url("/pics/myWork/nirAndTali/salon_nir_vetali_2.jpg")
+	           url("pics/myWork/nirAndTali/salon_nir_vetali1-min.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_amir1.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_amir_2.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_pinat_ochel.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_saloon.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_salon.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_tamar_2.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_tamar_1.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_kitchen.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_alon.jpg")
+	           url("/pics/myWork/benAndNoa/ben_ve_noa_bedroom.jpg")
+	           
+	           url("/pics/myWork/giliMedical/office_styling.jpg")
+	           url("/pics/myWork/hagarAndYoav/bathroom.jpg")
+
 	           url("/pics/about/noa.jpg");
 
 
@@ -263,7 +342,22 @@ body {
 	  width: 200px;
 	  height: 100px;
 	}
+
+
+	.navbar-brand img {
+	    height: 90%;
+	    display: inline;
+	    width: auto;
+	    position: relative;
+	    top: 13px;
+	    margin-left:44px;
+	}
+
+	nav.main {
+		border-top: 2px solid;
+	}
 }
+
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: #FF55AA;
@@ -272,13 +366,6 @@ body {
 	border-left:2px solid #FF69B4;
 }
 
-.navbar-brand img {
-    height: 90%;
-    width: auto;
-    position: relative;
-    top: 5px;
-    margin-left:44px;
-}
 
 .bold {
 	font-weight: bold;
