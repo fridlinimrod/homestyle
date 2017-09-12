@@ -1,7 +1,6 @@
 'use strict';
 
 /* App Module */
-
 var homeStylingApp = angular.module('homestylingapp', [
   'ngRoute',
   'ngSanitize',
@@ -9,6 +8,10 @@ var homeStylingApp = angular.module('homestylingapp', [
   'ngTouch',
   'FBAngular'
 ]);
+
+homeStylingApp.config(['$locationProvider', function($locationProvider) {
+    $locationProvider.hashPrefix('');
+}]);
 
 homeStylingApp.config(['$routeProvider',
   function($routeProvider) {

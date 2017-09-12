@@ -7,7 +7,7 @@ angular.module('homestylingapp')
 			method: "GET",
 			url: "data/recs.json",
 			cache: true,
-		}).success(callback);
+		}).then(callback);
 	};
 
 	return this;

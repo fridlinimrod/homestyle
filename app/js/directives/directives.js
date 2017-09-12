@@ -21,18 +21,32 @@ homeStylingApp.directive("picsCarousel", [function() {
                             $scope.init();
                         }
                     });
+
+                    window.addEventListener("keyup", $scope.handleKeyUp);
                 },
-        controller: ['$scope' , '$timeout', function ($scope, $timeout) {
+        controller: ['$scope', function ($scope) {
             $scope.shownPics = [];
             $scope.smallestIndex = 0;
             $scope.largestIndex = 0;
             $scope.init = function(){
                 $scope.shownPics = []; 
-                for (var i = 0; i < $scope.settings.picsToShow && i < $scope.pics.length -1; i++) {
+                for (var i = 0; i < $scope.settings.picsToShow && i < $scope.pics.length ; i++) {
+                    console.log("shownPics: ", $scope.shownPics);
                     $scope.shownPics.push($scope.pics[i]);
                 }
                 $scope.activePic = $scope.shownPics[0];
                 $scope.largestIndex = i -1;
+                $scope.smallestIndex = 0;
+            };
+
+            $scope.handleKeyUp = function(e){
+                $scope.$apply(function() {
+                    if (e.keyCode === 37) {
+                        $scope.scrollLeft();
+                    } else if (e.keyCode === 39) {
+                        $scope.scrollRight();
+                    }
+                });
             };
 
             $scope.scrollRight = function(){
@@ -42,9 +56,7 @@ homeStylingApp.directive("picsCarousel", [function() {
                 $scope.smallestIndex--;
                 $scope.largestIndex--;
                 $scope.shownPics.pop();
-                $timeout(function(){
-                    $scope.shownPics.unshift($scope.pics[$scope.smallestIndex]);
-                }, 400);
+                $scope.shownPics.unshift($scope.pics[$scope.smallestIndex]);
             };
 
             $scope.scrollLeft = function(){
@@ -54,14 +66,20 @@ homeStylingApp.directive("picsCarousel", [function() {
                 $scope.smallestIndex++;
                 $scope.largestIndex++;
                 $scope.shownPics.shift();
-                $timeout(function(){
-                    $scope.shownPics.push($scope.pics[$scope.largestIndex]);
-                }, 400);
+                $scope.shownPics.push($scope.pics[$scope.largestIndex]);
             };
 
             $scope.setActivePic = function(pic){
                 $scope.activePic = pic;
             };
+
+            $scope.getPicFromLeft = function(pic){
+                console.log(pic);
+            };
+
+            $scope.$on("$destroy", function() {
+                window.removeEventListener("keyup", $scope.handleKeyUp);
+            });
         }]
 
     };
@@ -73,12 +91,28 @@ homeStylingApp.directive("picsCarousel", [function() {
             picObj: "=",
         },
         templateUrl : 'partials/secondary/bigPicWithText.html',
-        link:   function ($scope) { 
+        link:   function ($scope, elem) {
             $scope.$watch('picObj', function(newVal){
                 if (newVal){
                     // console.log($scope.picObj);
                 }
             });
+            $scope.handleKeyUp = function(){
+                // if (e.keyCode === 37) {
+                    $scope.$parent.setActivePic({});
+                // } else if (e.keyCode === 39) {
+                //     $scope.scrollRight();
+                // }
+            };
+            elem.keyup($scope.handleKeyUp);
+
+            $scope.$on("$destroy", function(){
+                elem.removeEventListener("keyup",$scope.handleKeyUp);
+            });
+
+            $scope.test = function(){
+                console.log("mouseUp!!");
+            };
         }
     };
 }])

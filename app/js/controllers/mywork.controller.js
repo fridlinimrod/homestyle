@@ -8,11 +8,12 @@
  * Controller of the noadvashApp
  */
 
-
  angular.module('homestylingapp')
   .controller('myWorkCtrl', ['$scope', "housesService", "commonService", "$timeout", function ($scope, housesService, commonService, $timeout) {
+      console.log("nim");
         housesService.getHouses(function(data){
-            $scope.houses = data;
+            console.log(data);
+            $scope.houses = data.data;
             //see how to extend each house with some functions and properties...
             angular.forEach($scope.houses, function(value){
                 // value.activePic = value.pics[0];

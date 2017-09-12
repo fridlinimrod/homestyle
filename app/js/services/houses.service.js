@@ -7,14 +7,14 @@ angular.module('homestylingapp')
 			method: "GET",
 			url: "data/houses.json",
 			cache: true,
-		}).success(callback);
+		}).then(callback);
 	};
 	this.getBeforeAndAfterData = function(callback){
 		$http({
 			method: "GET",
 			url: "data/beforeAndAfter.json",
 			cache: true,
-		}).success(callback);
+		}).then(callback);
 	};
 
 	return this;

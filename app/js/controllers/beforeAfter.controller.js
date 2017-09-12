@@ -27,7 +27,7 @@
         }
 
   		var setScopePics = function(data){
-  			$scope.pics = data;
+  			$scope.pics = data.data;
 			$scope.activePicIndex = $scope.pics.length -2;
 			$scope.activePic = $scope.pics[$scope.activePicIndex];
   		};

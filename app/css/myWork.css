@@ -65,6 +65,12 @@
   width: 100%;
     /*max-height: 30vh;*/
     overflow: auto;
+  margin-bottom: 10px;
+}
+
+.selectedPicWrapper .picWrapper {
+  width: 100%;
+  margin-bottom:10px;
 }
 .textWrapper {
   padding: 0 2vw;
@@ -78,10 +84,13 @@
 .textWrapper p{
   white-space: pre-wrap;
 }
-.selectedPicWrapper img {
+.selectedPicWrapper img ,.selectedPicWrapper video{
   width: 100%;
-    max-height: 80vh;
-    margin-bottom: 5px;
+    /*max-height: 80vh;*/
+}
+
+.selectedPicWrapper video {
+  margin: 0;
 }
 
 .selectedPicWrapper img.fadeIn {
@@ -105,7 +114,7 @@
   padding: 9px;
   color: #FF69B4;
   text-decoration: none;
-  font-size: 1em;
+  font-size: 12px;
   font-weight: bold;
   border-right: 2px solid;
 }
@@ -154,6 +163,7 @@
   	background-color: white;
   	margin-bottom: 10px;
   	padding-top:1px;
+    padding-bottom: 12px;
   }
 
 	.textWrapper p {
@@ -182,6 +192,8 @@
   }
 /*# sourceMappingURL=../../dist/css/maps/myWork.css.map */
 
+/*desktop*/
+
 @media only screen and (min-width: 760px) {
   .housesLinksContainer a {
     font-size: 1.5em;
@@ -192,13 +204,20 @@
     flex-direction: row;
   }
 
+  .selectedPicWrapper .picWrapper {
+    width: 50%;
+    margin-bottom: 0;
+
+  }
+
   .selectedPicWrapper img{
-    width: 70%;
+    width: 100%;
   }
 
   .selectedPicWrapper .textWrapper{
-    width: 30%;
-    max-height: 80vh;
+    width: 25%;
+    margin-bottom: 0;
+    /*max-height: 80vh;*/
   }
 
 /*  #bigPicWithText:fullscreen {

@@ -27,15 +27,11 @@
         }
 
 		var setScopeRecs = function(data){
-			$scope.recs = data;
+			$scope.recs = data.data;
 		};
   		//TODO: create a recommendations service and fetch recs from it
   		recommendationsService.getRecs(setScopeRecs);
   		//create a directive for video (play and pause on click)
-		
-
-
-       
 	}
 
 ]);

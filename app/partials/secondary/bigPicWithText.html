@@ -3,5 +3,11 @@
 		<h3>{{picObj.headline}}</h3>
 		<p ng-bind-html="picObj.description" > </p>
 	</div>
-	<img id="bigPicWithText" ng-src="{{picObj.highResUrl}}" fullscreen alt="{{picObj.headline}}" ng-class="fadeIn" fade-in/>
+	<div class="picWrapper" >
+		<img id="bigPicWithText" ng-src="{{picObj.highResUrl}}" fullscreen alt="{{picObj.headline}}" ng-if="!picObj.type" />
+		<video id="bigPicWithText" autoplay ng-class="fadeIn" fade-in ng-if="picObj.type" fullscreen alt="{{picObj.headline}}" id="bigPicWithText" controls>
+			<source ng-src="{{picObj.highResUrl}}" type="video/mp4">
+			Your browser does not support HTML5 video.
+		</video>
+	</div>
 </section>

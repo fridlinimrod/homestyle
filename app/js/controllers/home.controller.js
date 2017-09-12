@@ -13,16 +13,22 @@
     $scope.title = "דף הבית";
     $scope.pics = [
     	{
-    		url: "pics/home/gameroom.jpg"
+    		url: "pics/home/1.jpg"
     	},
     	{
-    		url: "pics/home/kitchen.jpg"
+    		url: "pics/home/2.jpg"
     	},
     	{
-    		url: "pics/home/salon.jpg"
+    		url: "pics/home/3.jpg"
     	},
     	{
-    		url: "pics/home/sleepingroom.jpg"
-    	}
+    		url: "pics/home/4.jpg"
+    	},
+        {
+            url: "pics/home/5.jpg"
+        },
+        {
+            url: "pics/home/6.jpg"
+        }
 	];
   }]);
