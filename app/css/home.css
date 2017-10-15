@@ -92,10 +92,13 @@
 	.home-container .left-part {
 		width: 45%;
 		padding-right:11px;
+		height:500px;
 	}
 	.home-container .left-part img {
 		position: absolute;
-		height: 80vh;
+		/*height: 80vh;*/
+		width: 500px;
+		height: 500px;
 		top: 0;
 	}
 

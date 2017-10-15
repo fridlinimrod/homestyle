@@ -1,22 +1,12 @@
 .picInCarousel.ng-enter, 
 .picInCarousel.ng-leave
-{ 
-/*    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;*/
-    /*transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;*/
+{
     position: relative;
     display: block;
 } 
 
 .picInCarousel
-{ 
-/*    -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
-    -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;*/
-    /*transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;*/
+{
     position: relative;
     left: 0;
 } 
@@ -87,72 +77,78 @@
 	}
 }
 :root:before {
-	  content: url("/pics/beforeAfter/1.jpg")
+	  content:  url("/pics/home/1.jpg")
+	  url("/pics/home/2.jpg")
+	  url("/pics/home/3.jpg")
+	  url("/pics/home/4.jpg")
+	  url("/pics/home/5.jpg")
+	  url("/pics/home/6.jpg")
+	  url("/pics/beforeAfter/1.jpg")
 	           url("/pics/beforeAfter/2.jpg")
 	           url("/pics/beforeAfter/3.jpg")
 	           
 	           url("/pics/beforeAfter/4.jpg")
 	           url("/pics/beforeAfter/5.jpg")
-	           url("/pics/beforeAfter/6.jpg")
-	           url("/pics/beforeAfter/7.jpg")
-	           
-	           url("/pics/beforeAfter/8.jpg")
-	           url("/pics/beforeAfter/9.jpg")
-	           url("/pics/beforeAfter/10.jpg")
-	           url("/pics/beforeAfter/11.jpg")
-	           url("/pics/beforeAfter/12.jpg")
-	           url("/pics/beforeAfter/13.jpg")
-			   url("/pics/beforeAfter/sy1.jpg")
-			   url("/pics/beforeAfter/sy2.jpg")
-			   url("/pics/beforeAfter/sy3.jpg")
+               /*url("/pics/beforeAfter/6.jpg")*/
+               /*url("/pics/beforeAfter/7.jpg")*/
+
+               /*url("/pics/beforeAfter/8.jpg")*/
+               /*url("/pics/beforeAfter/9.jpg")*/
+               /*url("/pics/beforeAfter/10.jpg")*/
+               /*url("/pics/beforeAfter/11.jpg")*/
+               /*url("/pics/beforeAfter/12.jpg")*/
+               /*url("/pics/beforeAfter/13.jpg")*/
+			   /*url("/pics/beforeAfter/sy1.jpg")*/
+			   /*url("/pics/beforeAfter/sy2.jpg")*/
+			   /*url("/pics/beforeAfter/sy3.jpg")*/
 
 	  url("/pics/myWork/kids/kids_afternoonspace.jpg")
 	  url("/pics/myWork/kids/kidsroom_alonveori.jpg")
 	  url("/pics/myWork/kids/kidsroom_amir.jpg")
 	  url("/pics/myWork/kids/kidsroom_maya.jpg")
 	  url("/pics/myWork/kids/kidsroom_playroom.jpg")
-	  url("/pics/myWork/kids/kidsroom_shira.jpg")
-	  url("/pics/myWork/kids/kidsroom_tamar.jpg")
-	  url("/pics/myWork/kids/kidsroom_yuvalvedaniel.jpg")
+	  /*url("/pics/myWork/kids/kidsroom_shira.jpg")*/
+	  /*url("/pics/myWork/kids/kidsroom_tamar.jpg")*/
+	  /*url("/pics/myWork/kids/kidsroom_yuvalvedaniel.jpg")*/
 
-	  url("/pics/myWork/kitchen/dining_benoa.jpg")
-	  url("/pics/myWork/kitchen/dining_liavedaniel1.jpg")
-	  url("/pics/myWork/kitchen/dining_liavedaniel2.jpg")
-	  url("/pics/myWork/kitchen/dining_liavedaniel3.jpg")
-	  url("/pics/myWork/kitchen/dining_nirvetali.jpg")
-	  url("/pics/myWork/kitchen/kitchen_benoa.jpg")
+	  /*url("/pics/myWork/kitchen/dining_benoa.jpg")*/
+	  /*url("/pics/myWork/kitchen/dining_liavedaniel1.jpg")*/
+	  /*url("/pics/myWork/kitchen/dining_liavedaniel2.jpg")*/
+	  /*url("/pics/myWork/kitchen/dining_liavedaniel3.jpg")*/
+	  /*url("/pics/myWork/kitchen/dining_nirvetali.jpg")*/
+	  /*url("/pics/myWork/kitchen/kitchen_benoa.jpg")*/
 
-	  url("/pics/myWork/office/office_talyanagar1.jpg")
-	  url("/pics/myWork/office/office_talyanagar2.jpg")
-	  url("/pics/myWork/office/office_talyanagar3.jpg")
-	  url("/pics/myWork/office/office_gilimedical.jpg")
-	  url("/pics/myWork/office/office_liavelanuel.jpg")
+	  /*url("/pics/myWork/office/office_talyanagar1.jpg")*/
+	  /*url("/pics/myWork/office/office_talyanagar2.jpg")*/
+	  /*url("/pics/myWork/office/office_talyanagar3.jpg")*/
+	  /*url("/pics/myWork/office/office_gilimedical.jpg")*/
+	  /*url("/pics/myWork/office/office_liavelanuel.jpg")*/
 
-	  url("/pics/myWork/salons/saloon_benoa.jpg")
-	  url("/pics/myWork/salons/saloon_benoa2.jpg")
-	  url("/pics/myWork/salons/saloon_liavelanuel1.jpg")
-	  url("/pics/myWork/salons/saloon_liavelanuel2.jpg")
-	  url("/pics/myWork/salons/saloon_moranvegal1.jpg")
-	  url("/pics/myWork/salons/saloon_moranvegal2.jpg")
-	  url("/pics/myWork/salons/saloon_moranvegal3.jpg")
-	  url("/pics/myWork/salons/saloon_nirvetali1.jpg")
-	  url("/pics/myWork/salons/saloon_nirvetali2.jpg")
-	  url("/pics/myWork/salons/saloon_nirvetali3.jpg")
-	  url("/pics/myWork/salons/saloon_nirvetali14.jpg")
+	  /*url("/pics/myWork/salons/saloon_benoa.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_benoa2.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_liavelanuel1.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_liavelanuel2.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_moranvegal1.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_moranvegal2.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_moranvegal3.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_nirvetali1.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_nirvetali2.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_nirvetali3.jpg")*/
+	  /*url("/pics/myWork/salons/saloon_nirvetali14.jpg")*/
 
-	  url("/pics/myWork/shower/bathroom_liavelanuel.jpg")
-	  url("/pics/myWork/shower/bathroom_yoavehagar.jpg")
+	  /*url("/pics/myWork/shower/bathroom_liavelanuel.jpg")*/
+	  /*url("/pics/myWork/shower/bathroom_yoavehagar.jpg")*/
 
-	  url("/pics/myWork/sleep/beadroom-nirvetali.jpg")
-	  url("/pics/myWork/sleep/beadroom_benvenoa.jpg")
-	  url("/pics/myWork/sleep/beadroom_liavelanuel.jpg")
-	  url("/pics/myWork/sleep/beadroom_moranvegal.jpg")
+	  /*url("/pics/myWork/sleep/beadroom-nirvetali.jpg")*/
+	  /*url("/pics/myWork/sleep/beadroom_benvenoa.jpg")*/
+	  /*url("/pics/myWork/sleep/beadroom_liavelanuel.jpg")*/
+	  /*url("/pics/myWork/sleep/beadroom_moranvegal.jpg")*/
 
-	           url("/pics/about/noa.jpg")
-			   url("/pics/home/kitchen.jpg")
-			   url("/pics/home/gameroom.jpg")
-	           url("/pics/home/salon.jpg")
-	           url("/pics/home/sleepingroom.jpg");
+	           /*url("/pics/about/noa.jpg")*/
+			   /*url("/pics/home/kitchen.jpg")*/
+			   /*url("/pics/home/gameroom.jpg")*/
+	           /*url("/pics/home/salon.jpg")*/
+	           /*url("/pics/home/sleepingroom.jpg");*/
 
 
 
@@ -320,72 +316,78 @@ body {
 	}
 
 	:root:before {
-		content: url("/pics/beforeAfter/1.jpg")
+		content: url("/pics/home/1.jpg")
+		url("/pics/home/2.jpg")
+		url("/pics/home/3.jpg")
+		url("/pics/home/4.jpg")
+		url("/pics/home/5.jpg")
+		url("/pics/home/6.jpg")
+		url("/pics/beforeAfter/1.jpg")
 		url("/pics/beforeAfter/2.jpg")
 		url("/pics/beforeAfter/3.jpg")
 
 		url("/pics/beforeAfter/4.jpg")
 		url("/pics/beforeAfter/5.jpg")
-		url("/pics/beforeAfter/6.jpg")
-		url("/pics/beforeAfter/7.jpg")
+		/*url("/pics/beforeAfter/6.jpg")*/
+		/*url("/pics/beforeAfter/7.jpg")*/
 
-		url("/pics/beforeAfter/8.jpg")
-		url("/pics/beforeAfter/9.jpg")
-		url("/pics/beforeAfter/10.jpg")
-		url("/pics/beforeAfter/11.jpg")
-		url("/pics/beforeAfter/12.jpg")
-		url("/pics/beforeAfter/13.jpg")
-		url("/pics/beforeAfter/sy1.jpg")
-		url("/pics/beforeAfter/sy2.jpg")
-		url("/pics/beforeAfter/sy3.jpg")
+		/*url("/pics/beforeAfter/8.jpg")*/
+		/*url("/pics/beforeAfter/9.jpg")*/
+		/*url("/pics/beforeAfter/10.jpg")*/
+		/*url("/pics/beforeAfter/11.jpg")*/
+		/*url("/pics/beforeAfter/12.jpg")*/
+		/*url("/pics/beforeAfter/13.jpg")*/
+		/*url("/pics/beforeAfter/sy1.jpg")*/
+		/*url("/pics/beforeAfter/sy2.jpg")*/
+		/*url("/pics/beforeAfter/sy3.jpg")*/
 
-		url("/pics/myWork/kids/kids_afternoonspace.jpg")
-		url("/pics/myWork/kids/kidsroom_alonveori.jpg")
-		url("/pics/myWork/kids/kidsroom_amir.jpg")
-		url("/pics/myWork/kids/kidsroom_maya.jpg")
-		url("/pics/myWork/kids/kidsroom_playroom.jpg")
-		url("/pics/myWork/kids/kidsroom_shira.jpg")
-		url("/pics/myWork/kids/kidsroom_tamar.jpg")
-		url("/pics/myWork/kids/kidsroom_yuvalvedaniel.jpg")
+		/*url("/pics/myWork/kids/kids_afternoonspace.jpg")*/
+		/*url("/pics/myWork/kids/kidsroom_alonveori.jpg")*/
+		/*url("/pics/myWork/kids/kidsroom_amir.jpg")*/
+		/*url("/pics/myWork/kids/kidsroom_maya.jpg")*/
+		/*url("/pics/myWork/kids/kidsroom_playroom.jpg")*/
+		/*url("/pics/myWork/kids/kidsroom_shira.jpg")*/
+		/*url("/pics/myWork/kids/kidsroom_tamar.jpg")*/
+		/*url("/pics/myWork/kids/kidsroom_yuvalvedaniel.jpg")*/
 
-		url("/pics/myWork/kitchen/dining_benoa.jpg")
-		url("/pics/myWork/kitchen/dining_liavedaniel1.jpg")
-		url("/pics/myWork/kitchen/dining_liavedaniel2.jpg")
-		url("/pics/myWork/kitchen/dining_liavedaniel3.jpg")
-		url("/pics/myWork/kitchen/dining_nirvetali.jpg")
-		url("/pics/myWork/kitchen/kitchen_benoa.jpg")
+		/*url("/pics/myWork/kitchen/dining_benoa.jpg")*/
+		/*url("/pics/myWork/kitchen/dining_liavedaniel1.jpg")*/
+		/*url("/pics/myWork/kitchen/dining_liavedaniel2.jpg")*/
+		/*url("/pics/myWork/kitchen/dining_liavedaniel3.jpg")*/
+		/*url("/pics/myWork/kitchen/dining_nirvetali.jpg")*/
+		/*url("/pics/myWork/kitchen/kitchen_benoa.jpg")*/
 
-		url("/pics/myWork/office/office_talyanagar1.jpg")
-		url("/pics/myWork/office/office_talyanagar2.jpg")
-		url("/pics/myWork/office/office_talyanagar3.jpg")
-		url("/pics/myWork/office/office_gilimedical.jpg")
-		url("/pics/myWork/office/office_liavelanuel.jpg")
+		/*url("/pics/myWork/office/office_talyanagar1.jpg")*/
+		/*url("/pics/myWork/office/office_talyanagar2.jpg")*/
+		/*url("/pics/myWork/office/office_talyanagar3.jpg")*/
+		/*url("/pics/myWork/office/office_gilimedical.jpg")*/
+		/*url("/pics/myWork/office/office_liavelanuel.jpg")*/
 
-		url("/pics/myWork/salons/saloon_benoa.jpg")
-		url("/pics/myWork/salons/saloon_benoa2.jpg")
-		url("/pics/myWork/salons/saloon_liavelanuel1.jpg")
-		url("/pics/myWork/salons/saloon_liavelanuel2.jpg")
-		url("/pics/myWork/salons/saloon_moranvegal1.jpg")
-		url("/pics/myWork/salons/saloon_moranvegal2.jpg")
-		url("/pics/myWork/salons/saloon_moranvegal3.jpg")
-		url("/pics/myWork/salons/saloon_nirvetali1.jpg")
-		url("/pics/myWork/salons/saloon_nirvetali2.jpg")
-		url("/pics/myWork/salons/saloon_nirvetali3.jpg")
-		url("/pics/myWork/salons/saloon_nirvetali14.jpg")
+		/*url("/pics/myWork/salons/saloon_benoa.jpg")*/
+		/*url("/pics/myWork/salons/saloon_benoa2.jpg")*/
+		/*url("/pics/myWork/salons/saloon_liavelanuel1.jpg")*/
+		/*url("/pics/myWork/salons/saloon_liavelanuel2.jpg")*/
+		/*url("/pics/myWork/salons/saloon_moranvegal1.jpg")*/
+		/*url("/pics/myWork/salons/saloon_moranvegal2.jpg")*/
+		/*url("/pics/myWork/salons/saloon_moranvegal3.jpg")*/
+		/*url("/pics/myWork/salons/saloon_nirvetali1.jpg")*/
+		/*url("/pics/myWork/salons/saloon_nirvetali2.jpg")*/
+		/*url("/pics/myWork/salons/saloon_nirvetali3.jpg")*/
+		/*url("/pics/myWork/salons/saloon_nirvetali14.jpg")*/
 
-		url("/pics/myWork/shower/bathroom_liavelanuel.jpg")
-		url("/pics/myWork/shower/bathroom_yoavehagar.jpg")
+		/*url("/pics/myWork/shower/bathroom_liavelanuel.jpg")*/
+		/*url("/pics/myWork/shower/bathroom_yoavehagar.jpg")*/
 
-		url("/pics/myWork/sleep/beadroom-nirvetali.jpg")
-		url("/pics/myWork/sleep/beadroom_benvenoa.jpg")
-		url("/pics/myWork/sleep/beadroom_liavelanuel.jpg")
-		url("/pics/myWork/sleep/beadroom_moranvegal.jpg")
+		/*url("/pics/myWork/sleep/beadroom-nirvetali.jpg")*/
+		/*url("/pics/myWork/sleep/beadroom_benvenoa.jpg")*/
+		/*url("/pics/myWork/sleep/beadroom_liavelanuel.jpg")*/
+		/*url("/pics/myWork/sleep/beadroom_moranvegal.jpg")*/
 
-		url("/pics/about/noa.jpg")
-		url("/pics/home/kitchen.jpg")
-		url("/pics/home/gameroom.jpg")
-		url("/pics/home/salon.jpg")
-		url("/pics/home/sleepingroom.jpg");
+		/*url("/pics/about/noa.jpg")*/
+		/*url("/pics/home/kitchen.jpg")*/
+		/*url("/pics/home/gameroom.jpg")*/
+		/*url("/pics/home/salon.jpg")*/
+		/*url("/pics/home/sleepingroom.jpg");*/
 
 
 	           
