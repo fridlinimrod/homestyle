@@ -29,6 +29,9 @@
         },
         {
             url: "pics/home/6.jpg"
-        }
+        },
+		{
+            url: "pics/home/7.jpg"
+		}
 	];
   }]);
